@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link href="file:///C:/Users/Acer/Desktop/Projects/App/node_modules/roboto-fontface/css/roboto/roboto-fontface.css" rel="stylesheet"/>
+
+
+
+  </head>
+  <body>
+    <div id="form-login">
+      <form name="logInForm" id="logInForm">
+        <div id="initial-div">
+          <h1 id="h1-login"> Here you can Login </h1>
+          <p id="p"> Let's join us </p>
+        </div>
+        
+        <div class="input-conteiner">
+        <label for="email"> Email </label>
+        <div>
+        <div id="div-email">
+          <input type="email" id="email">
+        </div>
+        <div class="input-error" id="mailError"> error </div>
+        </div>
+        </div>
+
+        <div class="input-conteiner">
+          <label for="password"> Password </label>
+          <div class>
+          <div class="password-container">
+            <input type="password" id="password" />
+            <button id="eye-button" onclick="seePassword(event)"/>
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
+          <div class="input-error" id="passwordError"> error </div>
+          </div>
+        </div>
+
+        <div id="div-submit" class="input-conteiner">
+          <button
+            id="submit"
+            onclick="validation(event)"> 
+            L O G I N
+        </button>
+        </div>
+      </form>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

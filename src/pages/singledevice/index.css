@@ -1,0 +1,156 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: white;
+}
+
+.all-about-device {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  min-height: 600px;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 40px;
+  /* padding-left: 10%; */
+  /* padding-right: 10%; */
+}
+
+.device-image-container {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  height: 600px;
+  user-select: none;
+}
+
+.device-specifications {
+  display: flex;
+  margin-left: 200px;
+  flex-direction: column;
+  background-color: white;
+  padding-left: 20px;
+  padding-top: 15px;
+  font-size: 10px;
+  width: 50%;
+  height: 150px;
+  gap: 4px;
+  margin-top: -20px;
+  flex-wrap: ;
+}
+
+.section-for-device {
+  border-bottom: 1px solid gray;
+  padding-bottom: 10px;
+  height: 55px;
+}
+
+#device-photo {
+  height: 90%;
+  width: 100%;
+  margin-top: 34px;
+}
+
+.div-specification-device {
+  font-size: 17px;
+  gap: 20px;
+  display: flex;
+  padding-bottom: 20px;
+}
+
+#name-of-device {
+  font-size: 20px;
+}
+
+.device-name-container {
+  background-color: rgb(245, 245, 245);
+  text-align: center;
+  font-weight: bold;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 11px;
+  min-height: 25px;
+  margin-bottom: 7px;
+  padding-bottom: 11px;
+}
+
+.nav-container {
+  background: linear-gradient(to left, #7eb7ec, #7da3cf, #3d89d6);
+  border-bottom: 1px solid transparent;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 60px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-menu {
+  flex: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  min-height: 40px;
+  text-align: center;
+  width: 40px;
+}
+
+.nav-menu a {
+  flex-grow: 0.04;
+  text-decoration: none;
+  color: white;
+  min-height: 100%;
+  height: 40px;
+  padding-top: 14px;
+  font-size: 20px;
+}
+
+.nav-menu a:hover {
+  background: linear-gradient(
+    to bottom,
+    rgba(24, 112, 199, 0.6),
+    rgba(44, 87, 216, 0.6)
+  );
+  border: 0.1 solid white;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 30ms;
+  color: #ffffff;
+}
+
+#card {
+  font-weight: bold;
+}
+
+.phone-store {
+  border: 4px solid white;
+  margin-left: 7px;
+  box-sizing: border-box;
+  width: 150px;
+  text-align: center;
+  height: 40px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.phone-store a {
+  color: white;
+  text-decoration: none;
+}
+
+.back-button-container {
+  display: flex;
+}
