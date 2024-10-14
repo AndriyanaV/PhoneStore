@@ -28,42 +28,66 @@ function backToStoreF(){
   window.location.href="/pages/phonestore";
 }
 
+function pullItemsFromLocalStorage(){
+      const devices= new Array();
+
+      for(i=0;i<localStorage.length;i++){
+        const oneDevice= JSON.parse(localStorage.getItem("item"+i));
+        devices.push(oneDevice);
+      }
+    
+      return devices;
+
+}
+
 //localStorage.clear()
   function clearNull (){
 
-  for(i=0;i<localStorage.length;i++){
-      const device= JSON.parse(localStorage.getItem("item"+i));
-      if(device==null){
-        localStorage.removeItem("item"+i);
+
+    for(i=0;i<localStorage.length;i++){
+        const device= JSON.parse(localStorage.getItem("item"+i));
+        if(device==null){
+          localStorage.removeItem("item"+i);
       }
   }
+
+  
+}
+
+function redefineLocalStorage(reorganized){
+      localStorage.clear();
+      
+      reorganized.forEach((reorganizedItems,index)=>{
+            localStorage.setItem("item"+index, JSON.stringify(reorganizedItems));
+      })
 }
 
 
-function deleteOneProduct(ordered,addedItems){
-  let index=0;
+function deleteOneProduct(ordered,addedItems,index){
+  
   let reorganized = new Array();
   
        for(let i=0;i<addedItems.length;i++){
-               if(addedItems[i].id!=ordered.id){
+               if(i!=index){
                  reorganized.push(addedItems[i]);
                }
-               else{
-                  index=i;
-               }
+               
        }
    
    
-   //const g= localStorage.getItem("item"+index);
+
+   redefineLocalStorage(reorganized);
   
-  const findDeleted=new Array()
-  //ind=0;
+
+   //here is the way that I used previousely to resolve problem with deleted items in local storage 
+  /*const notDeleted=new Array()
+  
    for(let i=0;i<localStorage.length;i++){
     const device= JSON.parse(localStorage.getItem("item"+i));
     if(device!=null){
-      findDeleted.push(device)
+      notDeleted.push(device)
 
-      findDeleted.forEach((delteded)=>{
+      notDeleted.forEach((delteded)=>{
         if(delteded.id==ordered.id){
           indOfDeleted=i;
         }
@@ -72,7 +96,7 @@ function deleteOneProduct(ordered,addedItems){
    }
 
    localStorage.setItem("item"+ indOfDeleted,null);
-   clearNull();
+   clearNull();*/
 
   if(reorganized.length>0){
     tableItems.replaceChildren();
@@ -151,17 +175,16 @@ function calculatePrice(quantity,price,value,addedItems){
   theadItems.appendChild(trHead);
   tableItems.appendChild(theadItems);
 
-  let j=1;
+  
  
  
-  addedItems.forEach((ordered) => {
+  addedItems.forEach((ordered,index) => {
 
   const tbodyItems=createEl("tbody")
   const trProduct=createEl("tr");
   trProduct.className="product-row";
   const serialNumber=createEl("td");
-  serialNumber.innerHTML=j;
-  j++;
+  serialNumber.innerHTML=index+1;
   const tdProductPhoto=createEl("td");
   tdProductPhoto.className="item-photo";
   const imgProduct=createEl("img");
@@ -198,7 +221,7 @@ function calculatePrice(quantity,price,value,addedItems){
   const iRemoveProduct=createEl("i");
   iRemoveProduct.className="fa fa-light fa-trash";
   iRemoveProduct.addEventListener("click", function(){
-    deleteOneProduct(ordered,addedItems);
+    deleteOneProduct(ordered,addedItems,index);
        
   })
 
@@ -317,7 +340,7 @@ let i=0;
       
   }
 
-  //console.log(addedItems);
+  console.log(addedItems);
   showItemInCart(addedItems);
   optionsInCart(addedItems);
   
