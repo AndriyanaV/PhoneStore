@@ -234,7 +234,7 @@ body {
   margin-right: 20px;
   border-radius: 20px;
   border: 2px solid #b9c1f1;
-  height: 640px;
+  height: 740px;
   width: 150px;
 
   background: linear-gradient(
@@ -249,6 +249,7 @@ body {
   z-index: 1;
   margin-bottom: 10px;
   margin-top: 10px;
+  padding-bottom: 15px;
 }
 
 .second-square-counter-container {
@@ -267,4 +268,43 @@ body {
 }
 
 #cont {
+}
+
+#gray-square {
+  background-color: #b9c1f1;
+}
+
+#blue {
+  background: linear-gradient(
+    to top left,
+    #2263e0 34%,
+    rgba(34, 99, 224, 0) 120%,
+    rgba(18, 54, 122, 0.6) 50%
+  );
+  box-shadow: 0px 24px 24px -1px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px);
+}
+
+.counter-heading {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+#blue .counter-heading {
+  color: rgb(255, 255, 255);
+}
+
+.couner-description {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 19px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+#blue .couner-description {
+  color: white;
 }
