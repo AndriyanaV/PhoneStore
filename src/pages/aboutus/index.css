@@ -104,7 +104,6 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
-  width: 80%;
 }
 
 .our-story-container h1 {
@@ -320,10 +319,10 @@ body {
 .cards-company-container {
   display: flex;
   flex-direction: row;
-  width: 86%;
+  width: 90%;
   height: 340px;
   justify-content: center;
-  gap: 20px;
+  gap: 70px;
 }
 
 .card-fetature-desc {
@@ -339,7 +338,7 @@ body {
   flex-direction: column;
   padding-top: 14px;
   padding-left: 20px;
-  width: 26%;
+  width: 30%;
   color: white;
   border-radius: 10px;
 }
@@ -374,4 +373,99 @@ body {
 
 #vision img {
   height: 92%;
+}
+
+.contact {
+  width: 100%;
+  color: blue;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  justify-content: center;
+  gap: 100px;
+}
+
+.card-contact {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 30%;
+  height: 200px;
+  background-color: white;
+  color: white;
+  font-weight: bold;
+}
+
+.square-contact-container-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  height: 80px;
+}
+
+.square-contatct {
+  background-color: #2263e0;
+  border-radius: 10px;
+  width: 100px;
+  height: 100%;
+}
+
+.square-contact-container-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  height: 80px;
+  position: relative;
+}
+
+.info-contatc-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 86%;
+  height: 160px;
+  top: 20px;
+  left: 15px;
+  z-index: 1;
+  background-color: #a396bd;
+  border-radius: 10px;
+  font-size: 16px;
+  gap: 4px;
+}
+
+.info-contatc-container img {
+  width: 70px;
+  height: 70px;
+}
+
+#phone-c {
+  width: 65px;
+  height: 65px;
+}
+
+.square-contatct-b {
+  background-color: #2263e0;
+  background-color: #2263e0;
+  border-radius: 10px;
+  width: 100px;
+  height: 100%;
+  position: absolute;
+  top: 33px;
+  right: 15px;
+}
+
+#cards {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

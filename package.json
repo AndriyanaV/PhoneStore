@@ -13,12 +13,12 @@
   "type": "module",
   "devDependencies": {
     "concurrently": "^8.2.2",
-    "json-server": "^1.0.0-alpha.23",
-    "live-server": "^1.1.0"
+    "json-server": "^1.0.0-alpha.23"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.1",
     "chokidar": "^3.0.0",
+    "live-server": "^1.2.2",
     "roboto-fontface": "^0.10.0",
     "uuid": "^9.0.1"
   }
