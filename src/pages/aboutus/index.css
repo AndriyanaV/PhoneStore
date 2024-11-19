@@ -494,8 +494,19 @@ body {
   align-items: center;
   flex: 1;
 }
+.arrow-to-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
 
 .arrow-to-left img {
+  width: 100px;
+  height: 100px;
+}
+
+.arrow-to-right img {
   width: 100px;
   height: 100px;
 }
@@ -519,6 +530,11 @@ body {
   margin-top: -20px;
   height: 140px;
   position: relative;
+}
+
+.person-image {
+  max-width: 100%;
+  border-radius: 10px;
 }
 
 .linkedin-profile {
