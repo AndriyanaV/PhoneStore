@@ -79,7 +79,7 @@ body {
 }
 
 .about-us-header-section-container {
-  width: 100%;
+  width: 80%;
   height: 600px;
   background: url("/public/photos/main photo.jpg");
   background-size: cover;
@@ -120,7 +120,7 @@ body {
   text-align: left;
   align-items: center;
   justify-content: flex-start;
-  margin-top: 55px;
+  margin-top: 10px;
   font-size: 18px;
 }
 
@@ -133,27 +133,29 @@ body {
 }
 
 .text-our-story {
-  width: 80%;
+  width: 70%;
   font-family: "Open Sans", sans-serif;
   overflow: auto;
   line-height: 23px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .first-blue {
   display: flex;
   justify-content: flex-end;
   width: 80%;
-  height: 113px;
+  height: 170px;
+  position: relative;
 }
 
 .first-blue-square {
-  width: 127px;
-  height: 100%;
+  width: 140px;
+  height: 100px;
   background-color: #2263e0;
   border-radius: 20px;
-  margin-top: 10px;
-  margin-right: -14px;
+  position: absolute;
+  top: -15px;
+  right: 12px;
 }
 
 .photo-of-story {
@@ -165,7 +167,7 @@ body {
 
 .photo-of-story img {
   border-radius: 20px;
-  width: 100%;
+  width: 90%;
   height: 300px;
   z-index: 1;
 }
@@ -174,16 +176,18 @@ body {
   display: flex;
   justify-content: flex-start;
   width: 80%;
-  height: 113px;
-  margin-top: -70px;
+  height: 170px;
+  position: relative;
 }
 
 .second-blue-square {
-  width: 127px;
-  height: 100%;
+  width: 140px;
+  height: 100px;
   background-color: #2263e0;
   border-radius: 20px;
-  margin-left: -14px;
+  position: absolute;
+  left: 20px;
+  bottom: 40px;
 }
 
 .counters {
@@ -594,4 +598,78 @@ body {
 .name:hover {
   font-size: 20px;
   height: 3%;
+}
+
+@media (max-width: 480px) {
+  .our-story-container {
+    flex-direction: column;
+    margin-top: 0px;
+    gap: 10px;
+  }
+
+  .first-blue-square {
+    width: 70px;
+    height: 70px;
+    top: 4px;
+    position: absolute;
+    top: 4px;
+    top: 28px;
+    right: 16px;
+  }
+
+  .first-blue {
+    position: relative;
+    height: 110px;
+  }
+
+  .second-blue {
+    position: relative;
+    height: 100px;
+  }
+
+  .second-blue-square {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: -45px;
+    left: 22px;
+  }
+
+  .photo-of-story img {
+    height: 270px;
+  }
+
+  .text-our-story {
+    line-height: 22px;
+    font-size: 14px;
+    padding-left: 10px;
+  }
+
+  .counters {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .counter-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 35px;
+    margin-top: 0px;
+  }
+
+  .cards-about-company {
+    flex-direction: column;
+    align-items: center;
+    min-height: 800px;
+  }
+
+  .cards-company-container {
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .features-container {
+    width: 90%;
+  }
 }
