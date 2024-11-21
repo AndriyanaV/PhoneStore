@@ -133,16 +133,17 @@ body {
   margin-top: 20px;
   align-items: baseline;
   height: 500px;
+  flex-wrap: wrap;
 }
 
 .items-container .one-item {
   border: 0.5px solid white;
-  border-radius: 14px;
+  border-radius: 6px;
   box-shadow: 0px 0px 11px rgba(29, 28, 28, 0.3);
   margin-top: 27px;
   width: 370px;
-  gap: 10px;
-  height: 100%;
+  gap: 1px;
+  height: 96%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -160,6 +161,7 @@ body {
   margin-bottom: 6px;
   padding: 12px;
   padding-top: none;
+  margin-bottom: 21px;
 }
 
 .options:hover {
@@ -172,10 +174,10 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #bac2f2;
-  border-radius: 50px;
+  border-radius: 6px;
   color: black;
   min-height: 29px;
-  width: 80%;
+  width: 76%;
   user-select: none;
   border: none;
   cursor: pointer;
@@ -200,10 +202,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 40px;
+  border-radius: 6px;
   border-style: hidden;
   min-height: 29px;
-  width: 80%;
+  width: 76%;
   cursor: pointer;
 }
 
@@ -225,7 +227,7 @@ body {
 }
 
 .photo-container {
-  flex: 4;
+  flex: 3;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -255,7 +257,7 @@ body {
   width: 200px;
   text-align: center;
   height: 50px;
-  border-radius: 40px;
+  border-radius: 6px;
   font-size: 17px;
   border-style: hidden;
   margin-top: 50px;
@@ -371,4 +373,95 @@ body {
 
 .copyright p {
   cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    width: 100%;
+  }
+
+  .nav-menu {
+    justify-content: flex-end;
+    gap: 15px;
+    padding-right: 12px;
+  }
+
+  .items-container {
+  }
+
+  .items-container .one-item {
+    gap: 0px;
+    height: 86%;
+    justify-content: none;
+    margin-top: 0px;
+  }
+
+  .main-conatiner {
+    min-height: 1500px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .one-item {
+    gap: 0px;
+    height: 84%;
+    justify-content: none;
+    margin-top: 0px;
+  }
+
+  .options {
+    flex-direction: row;
+    margin-bottom: 6px;
+  }
+
+  .see-item {
+    height: 90%;
+    font-size: 15px;
+    background-color: #bac2f2cf;
+  }
+
+  .add-card {
+    height: 90%;
+    font-size: 15px;
+    font-weight: 400;
+    background-color: #bac2f2cf;
+  }
+
+  .see-item span {
+    gap: 20px;
+  }
+
+  .phone-store {
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+  }
+
+  .footer {
+    background-color: rgb(31, 51, 111);
+    display: flex;
+    flex-direction: column;
+    height: 380px;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .message-on-footer {
+    display: none;
+  }
+
+  .footer-content {
+    margin-top: 20px;
+  }
+
+  .logo-message-container {
+    display: none;
+  }
+
+  .contact-footer-container {
+    padding-bottom: 0px;
+  }
 }

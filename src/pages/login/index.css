@@ -7,8 +7,9 @@
   flex-direction: column;
   align-items: center;
   font-size: 23px;
-  border-radius: 10%;
+  border-radius: 15px;
   background-color: white;
+  justify-content: center;
 }
 
 body {
@@ -29,7 +30,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 23px;
+  margin-top: 20px;
   width: 100%;
 }
 
@@ -44,6 +45,7 @@ body {
   width: 100%;
   height: 100%;
   padding-right: 67px;
+  background-color: #b8b4b473;
 }
 
 #eye-button {
@@ -62,7 +64,7 @@ body {
   height: 100%;
   border: none;
   font-size: +23px;
-  border-radius: 14px;
+  border-radius: 4px;
 }
 
 #div-submit {
@@ -79,7 +81,6 @@ h1 {
 }
 
 label {
-  font-style: italic;
   font-weight: bold;
   color: rgb(73, 69, 69);
 }
@@ -98,6 +99,7 @@ input {
 #email {
   width: 100%;
   box-sizing: border-box;
+  background-color: #b8b4b475;
 }
 
 .input-error {
@@ -110,4 +112,49 @@ input {
   max-width: 334px;
   font-size: 14px;
   margin-top: 4px;
+  font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  #form-login {
+    width: 430px;
+  }
+
+  #p {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  .input-conteiner {
+    height: 20%;
+  }
+
+  label {
+    font-size: 21px;
+  }
+
+  form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+  }
+
+  .input-conteiner {
+    gap: 7px;
+    margin-top: 0px;
+  }
+
+  .input-error {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  #div-submit {
+    margin-top: 13px;
+  }
 }
