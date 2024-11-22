@@ -104,6 +104,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
+  width: 80%;
 }
 
 .our-story-container h1 {
@@ -152,7 +153,7 @@ body {
   width: 140px;
   height: 100px;
   background-color: #2263e0;
-  border-radius: 20px;
+  border-radius: 10px;
   position: absolute;
   top: -15px;
   right: 12px;
@@ -166,7 +167,7 @@ body {
 }
 
 .photo-of-story img {
-  border-radius: 20px;
+  border-radius: 10px;
   width: 90%;
   height: 300px;
   z-index: 1;
@@ -184,7 +185,7 @@ body {
   width: 140px;
   height: 100px;
   background-color: #2263e0;
-  border-radius: 20px;
+  border-radius: 10px;
   position: absolute;
   left: 20px;
   bottom: 40px;
@@ -344,7 +345,7 @@ body {
   padding-left: 20px;
   width: 30%;
   color: white;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .features-container h2 {
@@ -592,7 +593,7 @@ body {
 .position {
   width: 100%;
   height: 7%;
-  color: rgb(161 42 42 / 85%);
+  color: rgb(222 215 215 / 85%);
 }
 
 .name:hover {
@@ -605,6 +606,7 @@ body {
     flex-direction: column;
     margin-top: 0px;
     gap: 10px;
+    width: 100%;
   }
 
   .first-blue-square {
@@ -662,14 +664,55 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 800px;
+    width: 100%;
   }
 
   .cards-company-container {
     flex-direction: column;
     gap: 35px;
+    align-items: center;
+    width: 100%;
   }
 
   .features-container {
-    width: 90%;
+    width: 82%;
+    padding-bottom: 10px;
+  }
+
+  .card-fetature-desc {
+    font-size: 14px;
+  }
+
+  .contact {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    gap: 130px;
+  }
+
+  .card-contact {
+    width: 55%;
+    height: 150px;
+  }
+
+  .info-contatc-container img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .square-contatct-b {
+    top: 51px;
+    right: 6px;
+  }
+
+  #phone-c {
+    width: 50px;
+    height: 50px;
   }
 }
