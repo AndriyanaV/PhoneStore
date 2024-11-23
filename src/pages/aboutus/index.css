@@ -484,6 +484,19 @@ body {
   margin-bottom: 170px;
 }
 
+.mobile-slider {
+  display: none;
+  justify-content: center;
+  height: 300px;
+  margin-top: 100px;
+  width: 100%;
+}
+
+.slider-container-mobile {
+  display: flex;
+  gap: 15px;
+}
+
 .slider-container {
   width: 80%;
   display: flex;
@@ -539,11 +552,11 @@ body {
 
 .person-image {
   max-width: 100%;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .linkedin-profile {
-  border-radius: 10px;
+  border-radius: 5px;
   height: 70px;
   background-image: url(/public/photos/linkedin.png);
   object-fit: fill;
@@ -573,7 +586,7 @@ body {
   );
 
   gap: 1px;
-  border-radius: 10px;
+  border-radius: 5px;
   font-weight: bold;
   font-size: 19px;
   font-family: "Helvetica";
@@ -681,6 +694,39 @@ body {
 
   .card-fetature-desc {
     font-size: 14px;
+  }
+
+  .mobile-slider {
+    display: flex;
+  }
+
+  .slider {
+    display: none;
+  }
+
+  .image-in-slider {
+    height: 100px;
+  }
+
+  .linkedin-profile {
+    left: -19px;
+    top: 150px;
+  }
+
+  .person-info {
+    top: 155px;
+    right: 0px;
+    padding-top: 0px;
+  }
+
+  .arrow-to-right img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .arrow-to-left img {
+    width: 70px;
+    height: 70px;
   }
 
   .contact {
