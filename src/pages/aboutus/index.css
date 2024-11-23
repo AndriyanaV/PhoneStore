@@ -79,22 +79,21 @@ body {
 }
 
 .about-us-header-section-container {
-  width: 80%;
+  width: 100%;
   height: 600px;
-  background: url("/public/photos/main photo.jpg");
+  background: url("/public/photos/main photo.png");
   background-size: cover;
   background-color: #10444e;
-  opacity: 70%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
-  background-size: 150%;
+  background-size: cover;
 }
 
 .about-us-header-section-container h1 {
-  font-size: 100px;
+  display: none;
 }
 
 .our-story-container {
@@ -152,24 +151,25 @@ body {
 .first-blue-square {
   width: 140px;
   height: 100px;
-  background-color: #2263e0;
+  background-color: #0194d9;
   border-radius: 10px;
   position: absolute;
   top: -15px;
-  right: 12px;
+  right: -10px;
 }
 
 .photo-of-story {
   display: flex;
   justify-content: center;
-  width: 70%;
+  width: 440px;
+  height: 320px;
   margin-top: -60px;
 }
 
 .photo-of-story img {
   border-radius: 10px;
-  width: 90%;
-  height: 300px;
+  width: 440px;
+  height: 320px;
   z-index: 1;
 }
 
@@ -184,10 +184,10 @@ body {
 .second-blue-square {
   width: 140px;
   height: 100px;
-  background-color: #2263e0;
+  background-color: #0196da;
   border-radius: 10px;
   position: absolute;
-  left: 20px;
+  left: -9px;
   bottom: 40px;
 }
 
@@ -416,7 +416,7 @@ body {
 }
 
 .square-contatct {
-  background-color: #2263e0;
+  background-color: #0196da;
   border-radius: 10px;
   width: 100px;
   height: 100%;
@@ -460,7 +460,7 @@ body {
 
 .square-contatct-b {
   background-color: #2263e0;
-  background-color: #2263e0;
+  background-color: #0196da;
   border-radius: 10px;
   width: 100px;
   height: 100%;
