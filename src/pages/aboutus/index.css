@@ -90,6 +90,7 @@ body {
   align-items: center;
   color: white;
   background-size: cover;
+  margin-bottom: 40px;
 }
 
 .about-us-header-section-container h1 {
@@ -202,6 +203,7 @@ body {
   margin-top: 120px;
   justify-content: space-around;
   width: 80%;
+  margin-bottom: 40px;
 }
 
 .counter-item {
@@ -385,7 +387,7 @@ body {
   color: blue;
   display: flex;
   justify-content: center;
-  margin-top: 100px;
+  padding-top: 50px;
 }
 
 .contact-container {
@@ -480,8 +482,8 @@ body {
   width: 100%;
   height: 300px;
   justify-content: center;
-  margin-top: 140px;
-  margin-bottom: 170px;
+  margin-bottom: 150px;
+  margin-top: 150px;
 }
 
 .mobile-slider {
@@ -520,19 +522,19 @@ body {
 }
 
 .arrow-to-left img {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
 }
 
 .arrow-to-right img {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
 }
 
 .slider-item {
   display: flex;
   flex-direction: column;
-  width: 250px;
+  width: 270px;
   height: 200px;
 }
 
@@ -612,6 +614,10 @@ body {
 .name:hover {
   font-size: 20px;
   height: 3%;
+}
+
+.slider-mobile {
+  display: none;
 }
 
 @media (max-width: 480px) {
@@ -696,8 +702,20 @@ body {
     font-size: 14px;
   }
 
-  .mobile-slider {
+  .slider-mobile {
     display: flex;
+    margin-top: 150px;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .slider-container {
+    width: 100%;
+    gap: 6px;
+  }
+
+  .slider-item {
+    width: 250px;
   }
 
   .slider {
@@ -708,25 +726,45 @@ body {
     height: 100px;
   }
 
-  .linkedin-profile {
+  .linkedin-profile-mobile {
     left: -19px;
-    top: 150px;
+    border-radius: 5px;
+    height: 70px;
+    background-image: url(/public/photos/linkedin.png);
+    object-fit: fill;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100px;
+    position: absolute;
+    z-index: 1;
+    left: -19px;
+    cursor: pointer;
+    top: -6px;
   }
 
   .person-info {
-    top: 155px;
+    top: 0px;
     right: 0px;
     padding-top: 0px;
+    height: 110px;
+  }
+
+  .name-mobile {
+    height: 0px;
   }
 
   .arrow-to-right img {
-    width: 70px;
-    height: 70px;
+    width: 63px;
+    height: 63px;
   }
 
   .arrow-to-left img {
-    width: 70px;
-    height: 70px;
+    width: 63px;
+    height: 63px;
+  }
+
+  .slider-item img {
+    width: 100%;
   }
 
   .contact {

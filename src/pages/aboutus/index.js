@@ -84,7 +84,7 @@ const teamMembers = [
       linkedin: "https://www.linkedin.com/in/janesmith"
     },
     {
-      img: "/public/photos/people/michael.png",
+      img: "/public/photos/people/michael.jpg",
       name: "Michael Johnson",
       position: "UI/UX Designer",
       linkedin: "https://www.linkedin.com/in/michaeljohnson"
@@ -146,7 +146,7 @@ const teamMembers = [
     }
 
     // Log to verify the current set of members
-    console.log(perosnas);
+  
     setMembers(perosnas)
 }
 
@@ -184,17 +184,41 @@ function moveToLeft(){
 
 }
 
+startAtPhone=1
+sliderMobile=[]
+
+function moveToRightMobile(){
+  
+  if(startAtPhone== teamMembers.length){
+    startAtPhone=0
+  }
+
+  let sliderImage = document.querySelectorAll(".person-image-mobile");
+  let sliderLinkedin = document.querySelectorAll(".linkedin-profile-mobile");
+  let sliderName = document.querySelectorAll(".name-mobile");
+  let sliderPosition = document.querySelectorAll(".position-mobile");
+
+  sliderImage[0].src=teamMembers[startAtPhone].img
+  sliderName[0].innerHTML=teamMembers[startAtPhone].name
+  sliderPosition[0].innerHTML=teamMembers[startAtPhone].position
+
+  startAtPhone++
+}
+
 
 
 
 function setMembers(persons){
-    console.log(persons)
+    //console.log(persons)
     //const sliderContainer = document.querySelectorAll(".slider-item");
-    const sliderImage = document.querySelectorAll(".person-image");
-    const sliderLinkedin = document.querySelectorAll(".linkedin-profile");
-    const sliderName = document.querySelectorAll(".name");
-    const sliderPosition = document.querySelectorAll(".position");
+    let sliderImage = document.querySelectorAll(".person-image");
+    let sliderLinkedin = document.querySelectorAll(".linkedin-profile");
+    let sliderName = document.querySelectorAll(".name");
+    let sliderPosition = document.querySelectorAll(".position");
 
+    console.log(sliderImage)
+    
+    
     
     for(i=0;i<persons.length;i++){
 
