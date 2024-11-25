@@ -79,24 +79,7 @@ function deleteOneProduct(ordered,addedItems,index){
    redefineLocalStorage(reorganized);
   
 
-   //here is the way that I used previousely to resolve problem with deleted items in local storage 
-  /*const notDeleted=new Array()
   
-   for(let i=0;i<localStorage.length;i++){
-    const device= JSON.parse(localStorage.getItem("item"+i));
-    if(device!=null){
-      notDeleted.push(device)
-
-      notDeleted.forEach((delteded)=>{
-        if(delteded.id==ordered.id){
-          indOfDeleted=i;
-        }
-      })
-    }   
-   }
-
-   localStorage.setItem("item"+ indOfDeleted,null);
-   clearNull();*/
 
   if(reorganized.length>0){
     tableItems.replaceChildren();
@@ -195,10 +178,18 @@ function calculatePrice(quantity,price,value,addedItems){
   tdProductName.className="item-name";
   const nameOfItem=createEl("p");
   nameOfItem.innerHTML=ordered.name;
+  spanName=document.createElement('span')
+  spanName.innerHTML="Name"
+  spanName.className="span-responsive"
   tdProductName.appendChild(nameOfItem);
+  tdProductName.appendChild(spanName)
   const tdProductPrice=createEl("td");
   tdProductPrice.className="item-price";
   tdProductPrice.innerHTML= ordered.price;
+  spanPrice=document.createElement('span')
+  spanPrice.innerHTML="Price"
+  spanPrice.className="span-responsive"
+  tdProductPrice.appendChild(spanPrice)
   const tdProductQuantity=createEl("td");
   tdProductQuantity.className="item-quantity";
   const inputQuantity=createEl("input");
@@ -212,10 +203,20 @@ function calculatePrice(quantity,price,value,addedItems){
   
   inputQuantity.min="1";
   inputQuantity.className="input-quantity";
+  spanQunatity=document.createElement('span')
+  spanQunatity.innerHTML="Qunatity"
+  spanQunatity.className="span-responsive"
   tdProductQuantity.appendChild(inputQuantity);
+  tdProductQuantity.appendChild(spanQunatity);
   const tdProductSubtotal=createEl("td");
   tdProductSubtotal.className="item-subtotal";
   tdProductSubtotal.innerHTML=ordered.price;
+  const spanSubtotal=document.createElement('span')
+  spanSubtotal.innerHTML="Subtotal"
+  spanSubtotal.className="span-responsive"
+  tdProductSubtotal.appendChild(spanSubtotal)
+  tdProductQuantity.appendChild(inputQuantity);
+  tdProductQuantity.appendChild(spanQunatity);
   const tdProductRemove=createEl("td");
   tdProductRemove.className="remove-item";
   const iRemoveProduct=createEl("i");

@@ -184,8 +184,8 @@ function moveToLeft(){
 
 }
 
-startAtPhone=1
-sliderMobile=[]
+ let startAtPhone=1
+ let endAtPhone=8
 
 function moveToRightMobile(){
   
@@ -202,9 +202,44 @@ function moveToRightMobile(){
   sliderName[0].innerHTML=teamMembers[startAtPhone].name
   sliderPosition[0].innerHTML=teamMembers[startAtPhone].position
 
-  startAtPhone++
+  
+  startAtPhone++ 
+  decreaseCounterByTwo()
 }
 
+function decreaseCounterByTwo() {
+   if(startAtPhone!=1){
+     endAtPhone=startAtPhone-2
+   }
+
+   else{
+     endAtPhone=teamMembers.length-1
+   }
+}
+ 
+
+
+function moveToLeftMobile(){
+  console.log("start je u funciji ")
+  console.log(startAtPhone)
+  
+  if(endAtPhone<0 ){
+    endAtPhone=teamMembers.length-1
+  }
+
+  
+
+  let sliderImage = document.querySelectorAll(".person-image-mobile");
+  let sliderLinkedin = document.querySelectorAll(".linkedin-profile-mobile");
+  let sliderName = document.querySelectorAll(".name-mobile");
+  let sliderPosition = document.querySelectorAll(".position-mobile");
+
+  sliderImage[0].src=teamMembers[endAtPhone].img
+  sliderName[0].innerHTML=teamMembers[endAtPhone].name
+  sliderPosition[0].innerHTML=teamMembers[endAtPhone].position
+
+  endAtPhone--
+}
 
 
 
