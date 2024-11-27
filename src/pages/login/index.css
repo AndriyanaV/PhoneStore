@@ -15,7 +15,7 @@ body {
 #form-login {
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  height: 480px;
+  height: 450px;
   width: 500px;
   max-height: 600px;
   display: flex;
@@ -33,7 +33,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 25px;
+  gap: 30px;
   padding-bottom: 0px;
   width: 100%;
 }
@@ -50,6 +50,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  position: relative;
 }
 
 .input-conteiner label {
@@ -85,7 +86,7 @@ body {
   font-weight: bold;
   height: 100%;
   border: none;
-  font-size: +23px;
+  font-size: 24px;
   border-radius: 4px;
 }
 
@@ -134,13 +135,23 @@ input {
   padding-left: 8px;
   max-width: 334px;
   font-size: 14px;
-  margin-top: 4px;
   font-weight: bold;
+  position: absolute;
+  background-color: red;
+  color: white;
+  min-width: 98%;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 @media (max-width: 480px) {
   #form-login {
     width: 430px;
+    height: 430px;
+  }
+
+  #logInForm {
+    gap: 5px;
   }
 
   #p {
@@ -152,11 +163,12 @@ input {
   }
 
   .input-conteiner {
-    height: 20%;
+    height: 90px;
+    padding-top: 5px;
   }
 
   label {
-    font-size: 21px;
+    font-size: 20px;
   }
 
   form {
@@ -178,6 +190,6 @@ input {
   }
 
   #div-submit {
-    margin-top: 13px;
+    padding-top: 23px;
   }
 }

@@ -393,9 +393,10 @@ body {
 .contact-container {
   display: flex;
   flex-direction: row;
-  width: 80%;
+  width: 70%;
   justify-content: center;
-  gap: 100px;
+  gap: 110px;
+  padding-left: 34px;
 }
 
 .card-contact {
@@ -468,7 +469,7 @@ body {
   height: 100%;
   position: absolute;
   top: 37px;
-  right: 51px;
+  right: -7px;
 }
 
 #cards {
@@ -786,6 +787,7 @@ body {
     width: 100%;
     align-items: center;
     gap: 130px;
+    padding-left: 0px;
   }
 
   .card-contact {
@@ -794,22 +796,22 @@ body {
   }
 
   .info-contatc-container img {
-    width: 60px;
-    height: 60px;
+    width: 47px;
+    height: 47px;
   }
 
   .info-contatc-container {
-    width: 250px;
+    width: 230px;
     height: 170px;
   }
 
   .square-contatct-b {
     top: 60px;
-    right: -16px;
+    right: 2px;
   }
 
   #phone-c {
-    width: 50px;
-    height: 50px;
+    width: 47px;
+    height: 47px;
   }
 }

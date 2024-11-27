@@ -28,12 +28,14 @@ function validation(event) {
 
   function errorInMail(txt) {
     mailError.style.visibility = "visible";
+    mailError.style.display="block"
     mailError.innerText = txt;
     emailField.style.border = "1px solid red";
   }
 
   function errorInPassword(txt) {
     passwordError.style.visibility = "visible";
+    passwordError.style.display="block"
     passwordError.innerText = txt;
     passwordField.style.border = "1px solid red";
     eyeButton.style.border = "1px solid red";

@@ -24,7 +24,7 @@
       "camera": "12Mpx OIS, Dual-pixel PDAF",
       "os": "iOS",
       "price": 680,
-      "image": "/public/photos/iphone 13.jpeg"
+      "image": "/public/photos/iphone 13.png"
     },
     {
       "id": 2,
@@ -37,7 +37,7 @@
       "camera": "48Mpx PDAF",
       "os": "Android 12",
       "price": 1230,
-      "image": "https://image-us.samsung.com/us/smartphones/galaxy-s22/images/gallery/R0-Green/FLRC-214-R0-Green-01-PDP-GALLERY-1600x1200.jpg?$product-details-jpg$"
+      "image": "/public/photos/s22 ultra.png"
     },
     {
       "id": 3,
