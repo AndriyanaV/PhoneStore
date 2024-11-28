@@ -48,6 +48,10 @@ body {
   height: 55px;
 }
 
+.section-for-device h1 {
+  color: #0c4e8e;
+}
+
 #device-photo {
   height: 90%;
   width: 100%;
@@ -153,4 +157,164 @@ body {
 
 .back-button-container {
   display: flex;
+}
+
+.footer {
+  background-color: rgb(31, 51, 111);
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-message-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 2;
+  gap: 1px;
+  padding-bottom: 30px;
+}
+
+.message-on-footer {
+  text-align: left;
+  color: white;
+  max-width: 400px;
+  font-size: 16px;
+}
+
+.contact-footer-container {
+  color: white;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 27px;
+}
+
+.contact-footer-container p {
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.contact-footer-container H2 {
+  font-size: 200% !important;
+}
+
+.contact-footer-container p:hover {
+  color: #9bccff;
+}
+
+.follow-us-container {
+  flex: 2;
+  border: none;
+  min-height: 250px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 25px;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.logo-footer-container img {
+  width: 170px;
+  height: 170px;
+}
+
+.logo-footer-container {
+  height: 125px;
+}
+
+.contact-photo {
+  width: 43px;
+  height: 43px;
+
+  margin-bottom: none;
+  cursor: pointer;
+}
+
+#youtube-photo {
+  height: 63px;
+  width: 46px;
+}
+
+.copyright {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.copyright p {
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    width: 100%;
+  }
+
+  .nav-menu {
+    justify-content: flex-end;
+    gap: 15px;
+    padding-right: 12px;
+  }
+
+  .phone-store {
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+  }
+
+  .all-about-device {
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  .all-about-device {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .device-image-container {
+    width: 100%;
+    height: 500px;
+  }
+
+  .device-image-container img {
+    width: 100%;
+    height: 500px;
+  }
+
+  .device-specifications {
+    font-size: 12px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .section-for-device {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    align-items: center;
+  }
 }

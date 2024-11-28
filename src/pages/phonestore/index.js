@@ -43,6 +43,7 @@ async function Main(){
   let items=document.createElement("div");
   items.className="items-container";
   let mainContainer=document.getElementById("main-container");
+  //mainContainer.style.minHeight = "100vh";
   mainContainer.className="main-container";
   items.innerHTML=' ';
 

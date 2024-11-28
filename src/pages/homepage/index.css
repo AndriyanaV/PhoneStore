@@ -298,7 +298,6 @@ body {
 
 .message-on-footer {
   text-align: left;
-  font-style: italic;
   color: white;
   max-width: 400px;
   font-size: 16px;
@@ -341,8 +340,8 @@ body {
 }
 
 .logo-footer-container img {
-  width: 160px;
-  height: 160px;
+  width: 170px;
+  height: 170px;
 }
 
 .logo-footer-container {
@@ -350,16 +349,16 @@ body {
 }
 
 .contact-photo {
-  width: 37px;
-  height: 37px;
+  width: 43px;
+  height: 43px;
 
   margin-bottom: none;
   cursor: pointer;
 }
 
 #youtube-photo {
-  height: 50px;
-  width: 41px;
+  height: 63px;
+  width: 46px;
 }
 
 .copyright {
