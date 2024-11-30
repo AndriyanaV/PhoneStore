@@ -28,37 +28,14 @@ function backToStoreF(){
   window.location.href="/pages/phonestore";
 }
 
-function pullItemsFromLocalStorage(){
-      const devices= new Array();
-
-      for(i=0;i<localStorage.length;i++){
-        const oneDevice= JSON.parse(localStorage.getItem("item"+i));
-        devices.push(oneDevice);
-      }
-    
-      return devices;
-
-}
-
-//localStorage.clear()
-  function clearNull (){
 
 
-    for(i=0;i<localStorage.length;i++){
-        const device= JSON.parse(localStorage.getItem("item"+i));
-        if(device==null){
-          localStorage.removeItem("item"+i);
-      }
-  }
-
-  
-}
 
 function redefineLocalStorage(reorganized){
       localStorage.clear();
       
       reorganized.forEach((reorganizedItems,index)=>{
-            localStorage.setItem("item"+index, JSON.stringify(reorganizedItems));
+            localStorage.setItem("ordered"+index, JSON.stringify(reorganizedItems));
       })
 }
 
@@ -74,9 +51,8 @@ function deleteOneProduct(ordered,addedItems,index){
                
        }
    
-   
-
-   redefineLocalStorage(reorganized);
+    
+    redefineLocalStorage(reorganized);
   
 
   
@@ -96,12 +72,6 @@ function deleteOneProduct(ordered,addedItems,index){
   }
 
 }
-
-
-
-//`localStorage.clear()
-
-
 
 
 
@@ -172,12 +142,12 @@ function calculatePrice(quantity,price,value,addedItems){
   tdProductPhoto.className="item-photo";
   const imgProduct=createEl("img");
   imgProduct.className="img-product";
-  imgProduct.src= ordered.image;
+  imgProduct.src= ordered.item.image;    //promena
   tdProductPhoto.appendChild(imgProduct);
   const tdProductName=createEl("td");
   tdProductName.className="item-name";
   const nameOfItem=createEl("p");
-  nameOfItem.innerHTML=ordered.name;
+  nameOfItem.innerHTML=ordered.item.name;  //promena
   spanName=document.createElement('span')
   spanName.innerHTML="Name"
   spanName.className="span-responsive"
@@ -185,7 +155,7 @@ function calculatePrice(quantity,price,value,addedItems){
   tdProductName.appendChild(spanName)
   const tdProductPrice=createEl("td");
   tdProductPrice.className="item-price";
-  tdProductPrice.innerHTML= ordered.price;
+  tdProductPrice.innerHTML= ordered.item.price;  //promena
   spanPrice=document.createElement('span')
   spanPrice.innerHTML="Price"
   spanPrice.className="span-responsive"
@@ -195,9 +165,9 @@ function calculatePrice(quantity,price,value,addedItems){
   const inputQuantity=createEl("input");
   inputQuantity.style.width="50px";
   inputQuantity.type="number";
-  inputQuantity.value="1";
+  inputQuantity.value=ordered.quantity;   //promena
   inputQuantity.addEventListener("click", function(){
-   calculatePrice(inputQuantity.value,ordered.price,serialNumber.textContent,addedItems);
+   calculatePrice(inputQuantity.value,ordered.item.price,serialNumber.textContent,addedItems);
   });
   
   
@@ -210,7 +180,7 @@ function calculatePrice(quantity,price,value,addedItems){
   tdProductQuantity.appendChild(spanQunatity);
   const tdProductSubtotal=createEl("td");
   tdProductSubtotal.className="item-subtotal";
-  tdProductSubtotal.innerHTML=ordered.price;
+  tdProductSubtotal.innerHTML=ordered.item.price;  //promena
   const spanSubtotal=document.createElement('span')
   spanSubtotal.innerHTML="Subtotal"
   spanSubtotal.className="span-responsive"
@@ -249,7 +219,7 @@ const cuponPriceContainer=createEl("div");
 
 //options BACK TO STORE AND CLEAR CART 
 function optionsInCart(addedItems){
-//alert("radi");
+
 
 optionsContainer.className="options-container";
 const backToStoreContainer= createEl("div");
@@ -306,7 +276,7 @@ spanSubotal.className="span-subtotal-all";
 totalPrice=0;
 
 addedItems.forEach((ordered)=>{
-  totalPrice+=ordered.price});
+  totalPrice+=ordered.item.price});
 
 spanSubotal.innerHTML=totalPrice;
 subtotalContainer.appendChild(pSubtotal);
@@ -327,18 +297,29 @@ mainContainerCart[0].appendChild(cuponPriceContainer);
 
 }
 
-let i=0;
- function getItems(){
-  const addedItems=new Array;
+
+
+function getItems(){
+  const addedItems=[];
+  
   
   if(localStorage.length>0){
-    while(i<localStorage.length){
-      const ordered= JSON.parse(localStorage.getItem("item"+i));
-       i++;
-       if(ordered!=null){
-        addedItems.push(ordered);
+   for(let i=0;i<localStorage.length;i++){
+      already=false
+      const ordered= JSON.parse(localStorage.getItem("ordered"+i));
+
+      addedItems.forEach((el)=>{
+        
+         if (el.item.id===ordered.item.id){
+              already=true
+              el.quantity=el.quantity+1;
+         }
+       })
+
+       if(already==false){
+         addedItems.push(ordered)
+
        }
-      
   }
 
   console.log(addedItems);
@@ -351,9 +332,7 @@ let i=0;
     
     showMessage("Your cart is empty!");
   }
-} 
-
-
+}
 
 
 
