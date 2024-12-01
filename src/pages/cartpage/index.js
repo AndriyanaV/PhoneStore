@@ -168,6 +168,9 @@ function calculatePrice(quantity,price,value,addedItems){
   inputQuantity.value=ordered.quantity;   //promena
   inputQuantity.addEventListener("click", function(){
    calculatePrice(inputQuantity.value,ordered.item.price,serialNumber.textContent,addedItems);
+   let changeQuantity=JSON.parse(localStorage.getItem('ordered'+index))
+   changeQuantity.quantity=parseInt(inputQuantity.value)
+   localStorage.setItem('ordered'+index, JSON.stringify(changeQuantity))
   });
   
   
@@ -305,26 +308,29 @@ function getItems(){
   
   if(localStorage.length>0){
    for(let i=0;i<localStorage.length;i++){
-      already=false
+
       const ordered= JSON.parse(localStorage.getItem("ordered"+i));
 
-      addedItems.forEach((el)=>{
-        
-         if (el.item.id===ordered.item.id){
-              already=true
-              el.quantity=el.quantity+1;
-         }
-       })
+      let ids= addedItems.map(el => {
+         return el.item.id
+    })
+     
 
-       if(already==false){
-         addedItems.push(ordered)
+      if(ids.includes(ordered.item.id)){
+        el=addedItems.find((element) => element.item.id == ordered.item.id);
+        el.quantity+=1;
+      }
 
-       }
-  }
+      else{
+        addedItems.push(ordered)
+      }
+    }
 
-  console.log(addedItems);
-  showItemInCart(addedItems);
-  optionsInCart(addedItems);
+
+   console.log(addedItems);
+   showItemInCart(addedItems);
+   optionsInCart(addedItems);
+   redefineLocalStorage(addedItems)
   
   }
  
@@ -332,18 +338,11 @@ function getItems(){
     
     showMessage("Your cart is empty!");
   }
-}
 
+
+  }
 
 
 
 getItems()
 
-
-
-
-
-
-
-
-  
