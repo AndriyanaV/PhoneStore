@@ -3,20 +3,21 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 100%;
   background-color: white;
+  margin: 0px;
 }
 
 .all-about-device {
   display: flex;
+  flex: 4;
   flex-direction: row;
   width: 80%;
-  min-height: 600px;
-  justify-content: space-between;
+  justify-content: center;
   gap: 20px;
   margin-top: 40px;
-  /* padding-left: 10%; */
-  /* padding-right: 10%; */
+  min-height: 800px;
+  padding-top: 100px;
 }
 
 .device-image-container {
@@ -159,6 +160,116 @@ body {
   display: flex;
 }
 
+.footer {
+  background-color: rgb(31, 51, 111);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  /* position: absolute; */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* flex: 1; */
+  overflow: hidden;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-message-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 2;
+  gap: 1px;
+  padding-bottom: 30px;
+}
+
+.message-on-footer {
+  text-align: left;
+  color: white;
+  max-width: 400px;
+  font-size: 16px;
+}
+
+.contact-footer-container {
+  color: white;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 27px;
+}
+
+.contact-footer-container p {
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.contact-footer-container H2 {
+  font-size: 200% !important;
+}
+
+.contact-footer-container p:hover {
+  color: #9bccff;
+}
+
+.follow-us-container {
+  flex: 2;
+  border: none;
+  min-height: 250px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 25px;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.logo-footer-container img {
+  width: 170px;
+  height: 170px;
+}
+
+.logo-footer-container {
+  height: 125px;
+}
+
+.contact-photo {
+  width: 43px;
+  height: 43px;
+
+  margin-bottom: none;
+  cursor: pointer;
+}
+
+#youtube-photo {
+  height: 63px;
+  width: 46px;
+}
+
+.copyright {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.copyright p {
+  cursor: pointer;
+}
+
 @media (max-width: 480px) {
   .nav-container {
     width: 100%;
@@ -187,6 +298,8 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
+    padding-top: 10px;
+    margin-top: 0px;
   }
 
   .device-image-container {
@@ -199,11 +312,17 @@ body {
     height: 500px;
   }
 
+  .device-name-container {
+    width: 90%;
+    font-size: 12px;
+  }
+
   .device-specifications {
     font-size: 12px;
     width: 100%;
     margin: 0px;
     padding: 0px;
+    align-items: center;
   }
 
   .section-for-device {
@@ -214,5 +333,41 @@ body {
     padding-bottom: 15px;
     width: 100%;
     align-items: center;
+  }
+  .footer {
+    background-color: rgb(31, 51, 111);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    padding-top: 20px;
+    position: absolute;
+    bottom: -230%;
+    left: 0;
+    right: 0;
+  }
+
+  .message-on-footer {
+    display: none;
+  }
+
+  .footer-content {
+    margin-top: 0px;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 17px;
+  }
+
+  .logo-message-container {
+    display: none;
+  }
+
+  .contact-footer-container {
+    padding-bottom: 0px;
+    min-height: 100px;
+  }
+
+  .follow-us-container {
+    min-height: 100px;
   }
 }

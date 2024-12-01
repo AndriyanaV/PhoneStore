@@ -26,11 +26,15 @@ function seeItem(id){
 }
 
 function addItemToCart(item){
-  const addedItem =JSON.stringify(item);
-  localStorage.setItem("item"+localStorage.length, addedItem );
-  
-
-}
+  let ordered={
+     quantity:1,
+     item:item
+   }
+   const addedItem =JSON.stringify(ordered);
+   localStorage.setItem("ordered"+localStorage.length, addedItem );
+   
+ 
+ }
 
 
 async function Main(){
