@@ -2,6 +2,10 @@ body {
   margin: 0px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .page-content {
   margin-top: 27px;
 }
@@ -39,13 +43,13 @@ body {
   flex-grow: 0.04;
   text-decoration: none;
   color: white;
-  min-height: 100%;
-  height: 40px;
-  padding-top: 14px;
+  min-height: 45px;
+  padding-top: 10px;
   font-size: 20px;
+  box-shadow: inset 0 0 0 0px cyan;
 }
 
-.nav-menu a:hover {
+/*.nav-menu a:hover {
   background: linear-gradient(
     to bottom,
     rgba(24, 112, 199, 0.6),
@@ -56,6 +60,10 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   transition: 30ms;
   color: #ffffff;
+}*/
+
+.nav-menu a:hover {
+  border-bottom: 2px solid white;
 }
 
 #card {
@@ -418,7 +426,7 @@ body {
 
 .square-contatct {
   background-color: #0196da;
-  border-radius: 10px;
+  border-radius: 5px;
   width: 100px;
   height: 100%;
 }
@@ -444,7 +452,7 @@ body {
   left: 15px;
   z-index: 1;
   background-color: #a396bd;
-  border-radius: 10px;
+  border-radius: 5px;
   font-size: 16px;
   gap: 4px;
 }
@@ -462,12 +470,12 @@ body {
 .square-contatct-b {
   background-color: #2263e0;
   background-color: #0196da;
-  border-radius: 10px;
+  border-radius: 5px;
   width: 100px;
   height: 100%;
   position: absolute;
   top: 37px;
-  right: -7px;
+  right: -15px;
 }
 
 #cards {
@@ -924,7 +932,7 @@ body {
 
   .square-contatct-b {
     top: 60px;
-    right: 2px;
+    right: 5px;
   }
 
   #phone-c {
