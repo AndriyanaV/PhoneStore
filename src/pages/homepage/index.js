@@ -1,22 +1,18 @@
 
+import { createEl, getData,seeItem,createNavBar,createFooter,addItemToCart,checkItem,reorganizeLocalStorage} from '../../utils/utils.js';
+
+createNavBar();
+createFooter();
+
 //localStorage.clear()
 
-async function getData() {
-  try {
-    const response = await fetch('http://localhost:5050/devices');
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Error fetching data:', error);
-    return null;
-  }
-}
-
 function getRandomIndex(niz){
+
   let arr=new Array;
   let br=0;
 
   while(br<3){
+
     let index= Math.floor(Math.random() * niz.length);
 
     if(!arr.includes(index)){
@@ -25,47 +21,12 @@ function getRandomIndex(niz){
     }
       
   }
+
   return arr;
-  }
 
-
-  function createEl(type){
-    let element=document.createElement(type);
-    return element;
-  }
-
-
-
-  function seeItem(id){ 
-    let key = 'id';
-    let value = id;
-    let url = new URL(window.location.origin + '/pages/singledevice/');
-    url.searchParams.append(key, value);
-    window.location.href=url;
-
-  }
-
-  /*function addItemToCart(item){
-    const addedItem =JSON.stringify(item);
-    localStorage.setItem("item"+localStorage.length, addedItem );
-    
-  
-  }*/
-
-
-function addItemToCart(item){
-   let ordered={
-      quantity:1,
-      item:item
-    }
-    const addedItem =JSON.stringify(ordered);
-    localStorage.setItem("ordered"+localStorage.length, addedItem );
-    
-  
   }
 
   
-
 
 
 async function Main(){
@@ -74,7 +35,7 @@ async function Main(){
   niz=await getData();
 
   let selectedItems=getRandomIndex(niz);
-  //console.log(selectedItems);
+  
 
   let items=document.createElement("div");
   items.className="items-container";
@@ -83,49 +44,50 @@ async function Main(){
   items.innerHTML=' ';
 
  selectedItems.forEach( function(index) {
-    const item = niz[index];
-    //console.log(item);
 
-    divForOneItem=createEl('div');
+    const item = niz[index];
+  
+
+    const divForOneItem=createEl('div');
     divForOneItem.className="one-item";
 
-    divForPhoto=createEl('div');
+    const divForPhoto=createEl('div');
     divForPhoto.className="photo-container";
-    img=createEl('img');
+    const img=createEl('img');
     img.className="picOfItem";
     img.src=item.image;
     divForPhoto.appendChild(img);
 
 
-    divForName=createEl('div');
+    const divForName=createEl('div');
     divForName.className="nameOfItem";
-    pName=createEl('p');
+    const pName=createEl('p');
     pName.innerHTML=item.name;
     divForName.appendChild(pName);
 
-    divForOptions=createEl('div');
+    const divForOptions=createEl('div');
     divForOptions.className="options";
     const SeeItem=createEl('button');
     SeeItem.className="see-item";
     SeeItem.addEventListener("click", function() {
       seeItem(item.id);
     });
-    iEye=createEl('i');
+    const iEye=createEl('i');
     iEye.className="fas fa-eye";
-    spanEye=createEl('span');
+    const spanEye=createEl('span');
     spanEye.className='.see-item span';
     spanEye.innerHTML="See";
     spanEye.appendChild(iEye);
     SeeItem.appendChild(spanEye);
     
-    AddItem=createEl('button');
+    const AddItem=createEl('button');
     AddItem.className="add-card";
     AddItem.addEventListener("click", function(){
       addItemToCart(item);
     });
-    iAdd=createEl('i');
+    const iAdd=createEl('i');
     iAdd.className="fas fa-shopping-cart";
-    spanAdd=createEl('span');
+    const spanAdd=createEl('span');
     spanAdd.innerHTML="Add";
     spanAdd.appendChild(iAdd);
     AddItem.appendChild(spanAdd);
@@ -141,14 +103,12 @@ async function Main(){
  }
   )
 
-  const seeAll=document.createElement('button');
+  const seeAll=createEl('button');
   seeAll.className='see-all';
   seeAll.innerHTML="See All";
-  console.log(seeAll);
   main.appendChild(seeAll);
-  console.log(window.location.href)
   seeAll.addEventListener("click", function() {
-    window.location.href = "/pages/phonestore/";
+  window.location.href = "/pages/phonestore/";
 });
   
 

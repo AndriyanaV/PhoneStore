@@ -1,5 +1,6 @@
 body {
   margin: 0px;
+  font-family: "Gilroy";
 }
 
 * {
@@ -17,82 +18,6 @@ body {
   align-items: center;
   height: 780px;
   justify-content: center;
-}
-
-.nav-container {
-  background: linear-gradient(to left, #7eb7ec, #7da3cf, #3d89d6);
-  border-bottom: 1px solid transparent;
-  border: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-  color: white;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 60px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-.nav-menu {
-  flex: 2;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: flex-end;
-  min-height: 40px;
-  text-align: center;
-  width: 40px;
-}
-
-.nav-menu a {
-  flex-grow: 0.04;
-  text-decoration: none;
-  color: white;
-  min-height: 100%;
-  min-height: 45px;
-  padding-top: 10px;
-  font-size: 20px;
-}
-
-/*.nav-menu a:hover {
-  background: linear-gradient(
-    to bottom,
-    rgba(24, 112, 199, 0.6),
-    rgba(44, 87, 216, 0.6)
-  );
-  border: 0.1 solid white;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  transition: 30ms;
-  color: #ffffff;
-}*/
-
-.nav-menu a:hover {
-  border-bottom: 2px solid white;
-}
-
-#card {
-  font-weight: bold;
-}
-
-.phone-store {
-  border: 4px solid white;
-  margin-left: 7px;
-  box-sizing: border-box;
-  width: 150px;
-  text-align: center;
-  height: 40px;
-  padding: 4px;
-  cursor: pointer;
-}
-
-.phone-store a {
-  color: white;
-  text-decoration: none;
 }
 
 .top-selling-wrapper {
@@ -144,122 +69,6 @@ body {
   flex-wrap: wrap;
 }
 
-.items-container .one-item {
-  border: 0.5px solid white;
-  border-radius: 6px;
-  box-shadow: 0px 0px 11px rgba(29, 28, 28, 0.3);
-  margin-top: 27px;
-  width: 370px;
-  gap: 1px;
-  height: 96%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.options {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1;
-  text-align: center;
-  min-height: 30px;
-  border-collapse: collapse;
-  gap: 6px;
-  margin-bottom: 6px;
-  padding: 12px;
-  padding-top: none;
-  margin-bottom: 21px;
-}
-
-.options:hover {
-  cursor: pointer;
-}
-
-.see-item {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #bac2f2;
-  border-radius: 4px;
-  color: black;
-  min-height: 29px;
-  width: 76%;
-  user-select: none;
-  border: none;
-  cursor: pointer;
-}
-
-.see-item span {
-  padding-right: 35px;
-  display: flex;
-  gap: 2px;
-  column-gap: 323px;
-  flex-direction: row;
-}
-
-.see-item:hover {
-  background-color: #2d6baa;
-  color: white;
-}
-
-.add-card {
-  flex: 1;
-  background-color: #bac2f2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  border-style: hidden;
-  min-height: 29px;
-  width: 76%;
-  cursor: pointer;
-}
-
-.add-card:hover {
-  background-color: #2d6baa;
-  color: white;
-}
-
-.add-card span {
-  display: flex;
-  gap: 20px;
-}
-
-.see-item span {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 25px;
-  padding-left: 35px;
-}
-
-.photo-container {
-  flex: 3;
-  width: 100%;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  object-fit: cover;
-  align-items: center;
-}
-
-.picOfItem {
-  width: 80%;
-  height: 250px;
-}
-
-.nameOfItem {
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: baseline;
-  color: black;
-  font-size: 19px;
-  cursor: pointer;
-}
-
 .see-all {
   display: flex;
   align-items: center;
@@ -269,9 +78,10 @@ body {
   text-align: center;
   height: 50px;
   border-radius: 6px;
-  font-size: 17px;
+  font-size: 18px;
   border-style: hidden;
   margin-top: 50px;
+  font-family: "Gilroy";
 }
 
 .see-all:hover {
@@ -280,215 +90,17 @@ body {
   cursor: pointer;
 }
 
-.footer {
-  background-color: rgb(31, 51, 111);
-  display: flex;
-  flex-direction: column;
-}
-
-.footer-content {
-  display: flex;
-  flex-direction: row;
-  margin-top: 40px;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo-message-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex: 2;
-  gap: 1px;
-  padding-bottom: 30px;
-}
-
-.message-on-footer {
-  text-align: left;
-  color: white;
-  max-width: 400px;
-  font-size: 16px;
-}
-
-.contact-footer-container {
-  color: white;
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 27px;
-}
-
-.contact-footer-container p {
-  margin-top: 4px;
-  cursor: pointer;
-}
-
-.contact-footer-container H2 {
-  font-size: 200% !important;
-}
-
-.contact-footer-container p:hover {
-  color: #9bccff;
-}
-
-.follow-us-container {
-  flex: 2;
-  border: none;
-  min-height: 250px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 25px;
-  align-items: center;
-  width: 100%;
-  cursor: pointer;
-}
-
-.logo-footer-container img {
-  width: 170px;
-  height: 170px;
-}
-
-.logo-footer-container {
-  height: 125px;
-}
-
-.contact-photo {
-  width: 43px;
-  height: 43px;
-
-  margin-bottom: none;
-  cursor: pointer;
-}
-
-#youtube-photo {
-  height: 63px;
-  width: 46px;
-}
-
-.copyright {
-  display: flex;
-  flex-direction: column;
-  color: white;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-}
-
-.copyright p {
-  cursor: pointer;
-}
-
 @media (max-width: 480px) {
-  .nav-container {
-    width: 100%;
-  }
-
-  .nav-menu {
-    justify-content: flex-end;
-    gap: 15px;
-    padding-right: 12px;
-  }
-
-  .items-container .one-item {
-    gap: 0px;
-    height: 82%;
-    justify-content: none;
-    margin-top: 0px;
-  }
-
   .main-conatiner {
-    min-height: 1450px;
+    min-height: 1500px;
     justify-content: space-between;
-    padding-bottom: 37px;
+    padding-bottom: 19px;
     margin-top: 20px;
-  }
-
-  .one-item {
-    gap: 0px;
-    height: 82%;
-    justify-content: none;
-    margin-top: 0px;
-  }
-
-  .options {
-    flex-direction: row;
-    margin-bottom: 6px;
-    justify-content: center;
-  }
-
-  .see-item {
-    height: 50px;
-    font-size: 15px;
-    background-color: #bac2f2cf;
-    flex: none;
-    width: 44%;
-  }
-
-  .add-card {
-    height: 50px;
-    font-size: 15px;
-    font-weight: 400;
-    background-color: #bac2f2cf;
-    flex: none;
-    width: 44%;
-  }
-
-  .see-item span {
-    gap: 20px;
-  }
-
-  .phone-store {
-    border: 1px solid white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-  }
-
-  .picOfItem {
-    height: 200px;
-  }
-
-  .footer {
-    background-color: rgb(31, 51, 111);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 20px;
-    padding-top: 20px;
-  }
-
-  .message-on-footer {
-    display: none;
-  }
-
-  .footer-content {
-    margin-top: 0px;
-    flex-direction: column;
-    gap: 20px;
-    font-size: 17px;
-  }
-
-  .logo-message-container {
-    display: none;
-  }
-
-  .contact-footer-container {
-    padding-bottom: 0px;
-    min-height: 100px;
-  }
-
-  .follow-us-container {
-    min-height: 100px;
   }
 
   .see-all {
     margin-top: 0px;
     width: 170px;
-    border-radius: 3px;
+    border-radius: 4px;
   }
 }

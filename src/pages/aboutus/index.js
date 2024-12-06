@@ -1,3 +1,15 @@
+import { createNavBar, createFooter, createEl} from '../../utils/utils.js';
+
+const imgRight= document.getElementsByClassName("move-slider-img")[1].addEventListener("click", () => {moveToSlider('right')})
+const imgLeft= document.getElementsByClassName("move-slider-img")[0].addEventListener("click", () => {moveToSlider('left')})
+const imgRightM=document.getElementsByClassName("move-slider-img-m")[1].addEventListener("click", () => {moveToSliderMobile('right')})
+const imgLefttM=document.getElementsByClassName("move-slider-img-m")[0].addEventListener("click", () => {moveToSliderMobile('left')})
+
+
+createNavBar();
+createFooter();
+
+
 
 let numbers=new Array();
 numbers=[
@@ -25,7 +37,6 @@ numbers=[
 ]
 
 function counterUp(element, maxValue,attribute) {
-    //let ele = document.getElementById(elementSelector);
     let count = 0;
   
     const interval = setInterval(() => {
@@ -40,9 +51,10 @@ function counterUp(element, maxValue,attribute) {
 
 
 function startCouner(){
-    const all=document.getElementsByClassName("counter-heading")
+    const all=document.getElementsByClassName("counter-heading");
+
     for(let i=0;i<all.length;i++){
-        el=all[i];
+        let el=all[i];
         counterUp(el,numbers[i].number,numbers[i].attribute)
     }
 }
@@ -61,9 +73,10 @@ function isInViewport(element) {
     );
   }
 
-counterContainer=document.getElementsByClassName("counters")[0];
+const counterContainer=document.getElementsByClassName("counters")[0];
 window.addEventListener("scroll", ()=>{
-    if(isInViewport(counterContainer) &&   !counterStarted){
+   
+    if(isInViewport(counterContainer)  &&   !counterStarted){
         counterStarted=true
         startCouner();
     }
@@ -134,54 +147,62 @@ let leftIndex=teamMembers.length-1
 let persons=[]
 
 
-function moveToSlider(direction){
-  if(direction=='right'){
-   
+ function moveToSlider(direction){
 
-    for(i=0;i<3;i++){
+  if(direction=='right'){
+  
+    for(let i=0;i<3;i++){
       if(rightIndex>teamMembers.length-1){
-        rightIndex=0
+        rightIndex=0;
       }
 
-      persons.push(teamMembers[rightIndex])
-      rightIndex++
+      persons.push(teamMembers[rightIndex]);
+      rightIndex++;
+
     }
-    setMembers(persons)
-    persons=[]
-    leftIndex=rightIndex-4
+
+    setMembers(persons);
+    persons=[];
+    leftIndex=rightIndex-4;
+
   }
 
-  else{
+  else {
     
-    for(i=0;i<3;i++){
+    for(let i=0;i<3;i++){
+
       if(leftIndex<0){
-        leftIndex=teamMembers.length-1
+        leftIndex=teamMembers.length-1;
       }
-      persons.push(teamMembers[leftIndex])
-      leftIndex--
+
+      persons.push(teamMembers[leftIndex]);
+      leftIndex--;
     }
     
-    rightIndex=leftIndex+4
-    reversedArray=persons.reverse()
-    setMembers(reversedArray)
-    persons=[]
+    rightIndex=leftIndex+4;
+    let reversedArray=persons.reverse();
+    setMembers(reversedArray);
+    persons=[];
   }
 
 }
 
- let startAtPhone=1
- let endAtPhone=8
+ let startAtPhone=1;
+ let endAtPhone=8;
 
 function moveToSliderMobile(direction){
 
   if(direction=="right"){
+
     if(startAtPhone>teamMembers.length-1){
-      startAtPhone=0
+
+      startAtPhone=0;
+
     }
 
-    setUpMobile(startAtPhone)
-    startAtPhone++
-    endAtPhone=startAtPhone-2
+    setUpMobile(startAtPhone);
+    startAtPhone++;
+    endAtPhone=startAtPhone-2;
   }
 
   else{
@@ -214,36 +235,12 @@ function setUpMobile(index){
 
 
 
- 
 
-
-function moveToLeftMobile(){
-  console.log("start je u funciji ")
-  console.log(startAtPhone)
-  
-  if(endAtPhone<0 ){
-    endAtPhone=teamMembers.length-1
-  }
-
-  
-
-  let sliderImage = document.querySelectorAll(".person-image-mobile");
-  let sliderLinkedin = document.querySelectorAll(".linkedin-profile-mobile");
-  let sliderName = document.querySelectorAll(".name-mobile");
-  let sliderPosition = document.querySelectorAll(".position-mobile");
-
-  sliderImage[0].src=teamMembers[endAtPhone].img
-  sliderName[0].innerHTML=teamMembers[endAtPhone].name
-  sliderPosition[0].innerHTML=teamMembers[endAtPhone].position
-
-  endAtPhone--
-}
 
 
 
 function setMembers(persons){
-    //console.log(persons)
-    //const sliderContainer = document.querySelectorAll(".slider-item");
+    
     let sliderImage = document.querySelectorAll(".person-image");
     let sliderLinkedin = document.querySelectorAll(".linkedin-profile");
     let sliderName = document.querySelectorAll(".name");
@@ -253,7 +250,7 @@ function setMembers(persons){
     
     
     
-    for(i=0;i<persons.length;i++){
+    for(let i=0;i<persons.length;i++){
 
         sliderImage[i].src=persons[i].img
         sliderName[i].innerHTML=persons[i].name
@@ -269,11 +266,3 @@ function setMembers(persons){
 
 }
 
-
-
-
-
-
-
-
-//console.log(isInViewport(counterContainer))

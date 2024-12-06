@@ -9,6 +9,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
+    <link rel="stylesheet" type="text/css" href="../../styles/style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
       rel="stylesheet"
@@ -17,18 +18,9 @@
   </head>
   <body>
 
-    <div class="nav-container">
-      <div class="phone-store">
-        <span><a href="/pages/phonestore">Phone store</a></span>
-      </div>
-
-      <nav class="nav-menu">
-        <a href="/pages/homepage">Home</a>
-        <a href="/pages/aboutus">About us</a>
-        <a href="/pages/cartpage" id="card">Cart</a>
-        <a href="/pages/login">Log out</a>
-      </nav>
-    </div>
+    <div class="nav-container"> </div>
+  
+   
 
     <main>
       <div class="about-us-header-section-container"></div>
@@ -127,15 +119,15 @@
           </div>
           <div class="features-container" id="goals">
             <div class="feature-image-container"><img src="/public/photos/goals.png"/></div>
-            <h2>Our Mission</h2>
-            <p class="card-fetature-desc">To be the leading mobile technology destination, inspiring and connecting our community through innovative products and exceptional customer experiences. We envision a future where everyone can access the latest technology and harness its potential to enhance their lives.</p>
+            <h2>Our Goals</h2>
+            <p class="card-fetature-desc"> To increase market share, expand customer base, enhance user experience, and drive revenue growth through targeted marketing strategies, improved product offerings, and optimized sales channels. Our goal for mobile sales is to provide an exceptional experience that keeps our customers happy.</p>
           </div>
         </div>
       </section>
 
       <section class="slider-mobile">
       <div class="slider-container">
-        <div class="arrow-to-left"><img src="/public/photos/arrow_right.png" onclick="moveToSliderMobile('left')" /></div>
+        <div class="arrow-to-left"><img src="/public/photos/arrow_right.png" class="move-slider-img-m" /></div>
         <div class="slider-item">
           <div class="image-in-slider-mobile"><img src="/public/photos/people/ana_lazic.png" class="person-image-mobile"/></div>
           <div class="info-in-slider">
@@ -146,13 +138,13 @@
             </div>
           </div>
         </div>
-        <div class="arrow-to-right"  ><img src="/public/photos/arrow_left.png" onclick="moveToSliderMobile('right')"/></div>
+        <div class="arrow-to-right"  ><img src="/public/photos/arrow_left.png" class="move-slider-img-m"/></div>
       </div>
     </section>
 
       <section class="slider">
         <div class="slider-container">
-          <div class="arrow-to-left"><img src="/public/photos/arrow_right.png" onclick="moveToSlider('left')" /></div>
+          <div class="arrow-to-left"><img src="/public/photos/arrow_right.png"  class="move-slider-img" /></div>
           <div class="slider-item">
             <div class="image-in-slider"><img src="/public/photos/people/ana_lazic.png" class="person-image"/></div>
             <div class="info-in-slider">
@@ -183,7 +175,7 @@
               </div>
             </div>
           </div>
-          <div class="arrow-to-right"  ><img src="/public/photos/arrow_left.png" onclick="moveToSlider('right')"/></div>
+          <div class="arrow-to-right"  ><img src="/public/photos/arrow_left.png" class="move-slider-img"></div>
         </div>
       </section>
 
@@ -219,52 +211,8 @@
           
         </div>
       </section>
-      <div class="footer">
-        <div class="footer-content">
-          <div class="logo-message-container">
-            <div class="logo-footer-container">
-              <a href="/pages/phonestore">
-                <img src="/public/photos/logo.png" class="contact-photo"
-              /></a>
-            </div>
-            <div class="message-on-footer">
-              <p>
-                We believe in building connections, not just selling devices.
-              </p>
-            </div>
-          </div>
-
-          <div class="contact-footer-container">
-            <h2>Contact us</h2>
-            <p>Our Address, Belgrade</p>
-            <p>+381 6312345678</p>
-            <p>phonesore@gmail.com</p>
-          </div>
-
-          <div class="follow-us-container">
-            <a href="">
-              <img src="/public/photos/facebook.png" class="contact-photo" />
-            </a>
-            <a href="">
-              <img src="/public/photos/instagram.png" class="contact-photo" />
-            </a>
-            <a href="">
-              <img
-                src="/public/photos/youtube.png"
-                class="contact-photo"
-                id="youtube-photo"
-              />
-            </a>
-          </div>
-        </div>
-
-        <div class="copyright">
-          <hr style="width: 93%; text-align: center" />
-          <p>&copy Copyright</p>
-        </div>
-      </div>
-    </div>
+      <div class="footer"></div>
     </main>
-    <script src="index.js"> </script>
+    <script src="index.js" type="module">  </script>
   </body>
 </html>

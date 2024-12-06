@@ -1,9 +1,8 @@
-function createEl(type){
-  let element=document.createElement(type);
-  return element;
-}
+import { createEl, createNavBar,createFooter} from '../../utils/utils.js';
 
-//localStorage.clear()
+createNavBar();
+createFooter();
+
 
 const mainContainerCart=document.getElementsByClassName("page-content");
 const tableItems=document.createElement('table');
@@ -16,7 +15,7 @@ function clearCartFunction(){
 
 
 function showMessage (message){
-  const messageContainer=document.createElement("div");
+  const messageContainer=createEl("div");
   messageContainer.className="message-container";
   messageContainer.innerHTML=message;
   mainContainerCart[0].appendChild(messageContainer);
@@ -77,7 +76,7 @@ function deleteOneProduct(ordered,addedItems,index){
 
 function subtotalAllCalculate(addedItems){
   let sumAll=0;
-  for(i=0;i<addedItems.length;i++){
+  for(let i=0;i<addedItems.length;i++){
     let piceForOne=parseInt(document.getElementsByClassName("item-subtotal")[i].textContent);
     sumAll+=piceForOne;
 
@@ -104,20 +103,20 @@ function calculatePrice(quantity,price,value,addedItems){
  
  
   tableItems.className="table-item";
-  const theadItems=document.createElement('thead');
-  const trHead=document.createElement('tr');
+  const theadItems=createEl('thead');
+  const trHead=createEl('tr');
   trHead.className="thead-row";
-  const tdItem=document.createElement('td')
+  const tdItem=createEl('td')
   tdItem.className="td-item";
   tdItem.innerHTML="ITEM";
   tdItem.colSpan=3;
-  const tdPrice=document.createElement('td')
+  const tdPrice=createEl('td')
   tdPrice.className="td-item";
   tdPrice.innerHTML="PRICE";
-  const tdQuantity=document.createElement('td')
+  const tdQuantity=createEl('td')
   tdQuantity.className="td-item";
   tdQuantity.innerHTML="QUANTITY";
-  const tdSubtotal=document.createElement('td');
+  const tdSubtotal=createEl('td');
   tdSubtotal.className="td-item";
   tdSubtotal.innerHTML="SUBTOTAL";
   tdSubtotal.colSpan=2;
@@ -142,21 +141,21 @@ function calculatePrice(quantity,price,value,addedItems){
   tdProductPhoto.className="item-photo";
   const imgProduct=createEl("img");
   imgProduct.className="img-product";
-  imgProduct.src= ordered.item.image;    //promena
+  imgProduct.src= ordered.item.image;    
   tdProductPhoto.appendChild(imgProduct);
   const tdProductName=createEl("td");
   tdProductName.className="item-name";
   const nameOfItem=createEl("p");
-  nameOfItem.innerHTML=ordered.item.name;  //promena
-  spanName=document.createElement('span')
+  nameOfItem.innerHTML=ordered.item.name;  
+  const spanName=createEl('span')
   spanName.innerHTML="Name"
   spanName.className="span-responsive"
   tdProductName.appendChild(nameOfItem);
   tdProductName.appendChild(spanName)
   const tdProductPrice=createEl("td");
   tdProductPrice.className="item-price";
-  tdProductPrice.innerHTML= ordered.item.price;  //promena
-  spanPrice=document.createElement('span')
+  tdProductPrice.innerHTML= ordered.item.price; 
+  const spanPrice=createEl('span')
   spanPrice.innerHTML="Price"
   spanPrice.className="span-responsive"
   tdProductPrice.appendChild(spanPrice)
@@ -165,7 +164,7 @@ function calculatePrice(quantity,price,value,addedItems){
   const inputQuantity=createEl("input");
   inputQuantity.style.width="50px";
   inputQuantity.type="number";
-  inputQuantity.value=ordered.quantity;   //promena
+  inputQuantity.value=ordered.quantity;   
   inputQuantity.addEventListener("click", function(){
    calculatePrice(inputQuantity.value,ordered.item.price,serialNumber.textContent,addedItems);
    let changeQuantity=JSON.parse(localStorage.getItem('ordered'+index))
@@ -176,15 +175,15 @@ function calculatePrice(quantity,price,value,addedItems){
   
   inputQuantity.min="1";
   inputQuantity.className="input-quantity";
-  spanQunatity=document.createElement('span')
+  const spanQunatity=createEl('span')
   spanQunatity.innerHTML="Qunatity"
   spanQunatity.className="span-responsive"
   tdProductQuantity.appendChild(inputQuantity);
   tdProductQuantity.appendChild(spanQunatity);
   const tdProductSubtotal=createEl("td");
   tdProductSubtotal.className="item-subtotal";
-  tdProductSubtotal.innerHTML=ordered.item.price;  //promena
-  const spanSubtotal=document.createElement('span')
+  tdProductSubtotal.innerHTML= ordered.item.price * parseInt  (ordered.quantity);  
+  const spanSubtotal=createEl('span')
   spanSubtotal.innerHTML="Subtotal"
   spanSubtotal.className="span-responsive"
   tdProductSubtotal.appendChild(spanSubtotal)
@@ -220,16 +219,16 @@ function calculatePrice(quantity,price,value,addedItems){
 const optionsContainer=createEl("div");
 const cuponPriceContainer=createEl("div");
 
-//options BACK TO STORE AND CLEAR CART 
+//OPTIONS BACK TO STORE AND CLEAR CART 
 function optionsInCart(addedItems){
 
 
 optionsContainer.className="options-container";
 const backToStoreContainer= createEl("div");
 backToStoreContainer.className="back-store-container";
-iBackToStore=document.createElement("i");
+const iBackToStore=document.createElement("i");
 iBackToStore.className="fa fa-solid fa-arrow-left";
-BackToStoreButtton=createEl("button");
+const BackToStoreButtton=createEl("button");
 BackToStoreButtton.className="back-to-store-button";
 BackToStoreButtton.innerHTML="Back to store";
 BackToStoreButtton.addEventListener("click", function(){
@@ -251,7 +250,7 @@ optionsContainer.appendChild(clearCartContainer);
 
 
 //CUPPON AND SUBTOTAL
-//const cuponPriceContainer=document.createElement("div");
+
 cuponPriceContainer.className="cupon-price-container";
 const cuponContainer=createEl("div");
 cuponContainer.className="cupon-container";
@@ -272,14 +271,14 @@ const totalPriceContainer=createEl("div");
 totalPriceContainer.className="total-price-container";
 const subtotalContainer=createEl("div");
 subtotalContainer.className="subtotal-conainer";
-pSubtotal=createEl("p");
+const pSubtotal=createEl("p");
 pSubtotal.innerHTML="Subtotal";
-spanSubotal=createEl("span");
+const spanSubotal=createEl("span");
 spanSubotal.className="span-subtotal-all";
-totalPrice=0;
+let totalPrice=0;
 
 addedItems.forEach((ordered)=>{
-  totalPrice+=ordered.item.price});
+  totalPrice+=ordered.item.price*ordered.quantity});
 
 spanSubotal.innerHTML=totalPrice;
 subtotalContainer.appendChild(pSubtotal);
@@ -302,22 +301,24 @@ mainContainerCart[0].appendChild(cuponPriceContainer);
 
 
 
-function getItems(){
+/*function getItems(){
+
   const addedItems=[];
   
   
   if(localStorage.length>0){
+
    for(let i=0;i<localStorage.length;i++){
 
       const ordered= JSON.parse(localStorage.getItem("ordered"+i));
 
       let ids= addedItems.map(el => {
-         return el.item.id
+         return el.item.id;
     })
      
 
       if(ids.includes(ordered.item.id)){
-        el=addedItems.find((element) => element.item.id == ordered.item.id);
+        let el=addedItems.find((element) => element.item.id == ordered.item.id);
         el.quantity+=1;
       }
 
@@ -340,9 +341,36 @@ function getItems(){
   }
 
 
-  }
+  }*/
+  function getItems(){
+
+    const addedItems=[];
+    
+    
+    if(localStorage.length>0){
+  
+     for(let i=0;i<localStorage.length;i++){
+  
+        const ordered= JSON.parse(localStorage.getItem("ordered"+i));
+        addedItems.push(ordered)
+     }
+     
+       showItemInCart(addedItems);
+       optionsInCart(addedItems);
+       
+     
+    }
+   
+    else{
+      showMessage("Your cart is empty!");
+    }
+  
+  
+    }
+
 
 
 
 getItems()
 
+//localStorage.clear()

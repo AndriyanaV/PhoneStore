@@ -1,3 +1,8 @@
+import { createEl,createNavBar,createFooter} from '../../utils/utils.js';
+
+createNavBar();
+createFooter();
+
 async function getData() {
   try {
     const response = await fetch('http://localhost:5050/devices');
@@ -10,11 +15,6 @@ async function getData() {
 }
 
 
-function createEl(type){
-  let element=document.createElement(type);
-  return element;
-}
-
 
 
 async function showItem(){
@@ -22,11 +22,7 @@ async function showItem(){
   let urlParams = new URLSearchParams(window.location.search);
   let id = urlParams.get('id');
 
-  // www.my-site.com?id=2&name=test
-  // {
-    // id: 2,
-    // name: test
-  // }
+  
 
   let niz=[];
   niz=await getData();
