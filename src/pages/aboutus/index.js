@@ -260,7 +260,6 @@ function setMembers(persons){
 
         sliderImage[i].src=persons[i].img
         sliderName[i].innerHTML=persons[i].name
-        sliderLinkedin [i].innerHTML=persons[i].linkedin
         sliderPosition[i].innerHTML=persons[i].position
 
     }
