@@ -5,18 +5,31 @@ body {
   justify-content: center;
   min-height: 100vh;
   background-color: white;
+  margin: 0px;
+  font-family: "Gilroy";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: -80%;
 }
 
 .all-about-device {
+  padding-top: 70px;
   display: flex;
+  flex: 4;
   flex-direction: row;
   width: 80%;
-  min-height: 600px;
-  justify-content: space-between;
+  justify-content: center;
   gap: 20px;
   margin-top: 40px;
-  /* padding-left: 10%; */
-  /* padding-right: 10%; */
+  min-height: 80vh;
+  padding-top: 100px;
 }
 
 .device-image-container {
@@ -39,13 +52,20 @@ body {
   height: 150px;
   gap: 4px;
   margin-top: -20px;
-  flex-wrap: ;
 }
 
 .section-for-device {
   border-bottom: 1px solid gray;
-  padding-bottom: 10px;
-  height: 55px;
+  height: 70px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+}
+
+.section-for-device h1 {
+  color: #0c4e8e;
 }
 
 #device-photo {
@@ -74,83 +94,74 @@ body {
   align-items: center;
   justify-content: center;
   padding-top: 11px;
-  min-height: 25px;
+  min-height: 35px;
   margin-bottom: 7px;
   padding-bottom: 11px;
 }
 
-.nav-container {
-  background: linear-gradient(to left, #7eb7ec, #7da3cf, #3d89d6);
-  border-bottom: 1px solid transparent;
-  border: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-  color: white;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 60px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-.nav-menu {
-  flex: 2;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: flex-end;
+.add-card {
+  margin-top: 20px;
   min-height: 40px;
-  text-align: center;
-  width: 40px;
+  min-width: 100%;
+  gap: 12px;
 }
 
-.nav-menu a {
-  flex-grow: 0.04;
-  text-decoration: none;
-  color: white;
-  min-height: 100%;
-  height: 40px;
-  padding-top: 14px;
-  font-size: 20px;
-}
+@media (max-width: 480px) {
+  .all-about-device {
+    flex-direction: column;
+    gap: 0px;
+    min-height: 100vh;
+  }
 
-.nav-menu a:hover {
-  background: linear-gradient(
-    to bottom,
-    rgba(24, 112, 199, 0.6),
-    rgba(44, 87, 216, 0.6)
-  );
-  border: 0.1 solid white;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  transition: 30ms;
-  color: #ffffff;
-}
+  .all-about-device {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 60px;
+    margin-top: 0px;
+  }
 
-#card {
-  font-weight: bold;
-}
+  .device-image-container {
+    width: 100%;
+    height: 500px;
+  }
 
-.phone-store {
-  border: 4px solid white;
-  margin-left: 7px;
-  box-sizing: border-box;
-  width: 150px;
-  text-align: center;
-  height: 40px;
-  padding: 4px;
-  cursor: pointer;
-}
+  .device-image-container img {
+    width: 100%;
+    height: 500px;
+  }
 
-.phone-store a {
-  color: white;
-  text-decoration: none;
-}
+  .device-name-container {
+    width: 90%;
+    font-size: 12px;
+    min-height: 50px;
+  }
 
-.back-button-container {
-  display: flex;
+  .device-specifications {
+    font-size: 12px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    align-items: center;
+  }
+
+  .section-for-device {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .add-card {
+    min-width: 90%;
+    margin-top: 30px;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: -250%;
+  }
 }

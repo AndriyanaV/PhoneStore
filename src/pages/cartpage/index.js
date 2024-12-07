@@ -1,12 +1,13 @@
-function createEl(type){
-  let element=document.createElement(type);
-  return element;
-}
+import { createEl, createNavBar,createFooter,reorganizeLocalStorage} from '../../utils/utils.js';
 
-//localStorage.clear()
+createNavBar();
+createFooter();
+
 
 const mainContainerCart=document.getElementsByClassName("page-content");
-const tableItems=document.createElement('table');
+const tableItems=createEl('table');
+const optionsContainer=createEl("div");
+const cuponPriceContainer=createEl("div");
 
 function clearCartFunction(){
   localStorage.clear();
@@ -16,7 +17,7 @@ function clearCartFunction(){
 
 
 function showMessage (message){
-  const messageContainer=document.createElement("div");
+  const messageContainer=createEl("div");
   messageContainer.className="message-container";
   messageContainer.innerHTML=message;
   mainContainerCart[0].appendChild(messageContainer);
@@ -26,40 +27,6 @@ function showMessage (message){
 
 function backToStoreF(){
   window.location.href="/pages/phonestore";
-}
-
-function pullItemsFromLocalStorage(){
-      const devices= new Array();
-
-      for(i=0;i<localStorage.length;i++){
-        const oneDevice= JSON.parse(localStorage.getItem("item"+i));
-        devices.push(oneDevice);
-      }
-    
-      return devices;
-
-}
-
-//localStorage.clear()
-  function clearNull (){
-
-
-    for(i=0;i<localStorage.length;i++){
-        const device= JSON.parse(localStorage.getItem("item"+i));
-        if(device==null){
-          localStorage.removeItem("item"+i);
-      }
-  }
-
-  
-}
-
-function redefineLocalStorage(reorganized){
-      localStorage.clear();
-      
-      reorganized.forEach((reorganizedItems,index)=>{
-            localStorage.setItem("item"+index, JSON.stringify(reorganizedItems));
-      })
 }
 
 
@@ -74,29 +41,12 @@ function deleteOneProduct(ordered,addedItems,index){
                
        }
    
+    
    
-
-   redefineLocalStorage(reorganized);
+    reorganizeLocalStorage(reorganized)
   
 
-   //here is the way that I used previousely to resolve problem with deleted items in local storage 
-  /*const notDeleted=new Array()
   
-   for(let i=0;i<localStorage.length;i++){
-    const device= JSON.parse(localStorage.getItem("item"+i));
-    if(device!=null){
-      notDeleted.push(device)
-
-      notDeleted.forEach((delteded)=>{
-        if(delteded.id==ordered.id){
-          indOfDeleted=i;
-        }
-      })
-    }   
-   }
-
-   localStorage.setItem("item"+ indOfDeleted,null);
-   clearNull();*/
 
   if(reorganized.length>0){
     tableItems.replaceChildren();
@@ -105,31 +55,28 @@ function deleteOneProduct(ordered,addedItems,index){
     cuponPriceContainer.replaceChildren();
     optionsInCart(reorganized)
   }
+
   else{
     tableItems.replaceChildren();
+    tableItems.style.display="none"
     optionsContainer.replaceChildren();
+    optionsContainer.style.display="none";
     cuponPriceContainer.replaceChildren();
-    showMessage("Your cart is empty")
+    cuponPriceContainer.style.display="none"
+    showMessage("Your cart is empty!")
   }
 
 }
 
 
 
-//`localStorage.clear()
-
-
-
-
-
 function subtotalAllCalculate(addedItems){
   let sumAll=0;
-  for(i=0;i<addedItems.length;i++){
+  for(let i=0;i<addedItems.length;i++){
     let piceForOne=parseInt(document.getElementsByClassName("item-subtotal")[i].textContent);
     sumAll+=piceForOne;
 
   }
-
     document.getElementsByClassName("span-subtotal-all")[0].innerHTML=sumAll;
 }
 
@@ -148,23 +95,21 @@ function calculatePrice(quantity,price,value,addedItems){
 
  function showItemInCart(addedItems){
   
- 
- 
   tableItems.className="table-item";
-  const theadItems=document.createElement('thead');
-  const trHead=document.createElement('tr');
+  const theadItems=createEl('thead');
+  const trHead=createEl('tr');
   trHead.className="thead-row";
-  const tdItem=document.createElement('td')
+  const tdItem=createEl('td')
   tdItem.className="td-item";
   tdItem.innerHTML="ITEM";
   tdItem.colSpan=3;
-  const tdPrice=document.createElement('td')
+  const tdPrice=createEl('td')
   tdPrice.className="td-item";
   tdPrice.innerHTML="PRICE";
-  const tdQuantity=document.createElement('td')
+  const tdQuantity=createEl('td')
   tdQuantity.className="td-item";
   tdQuantity.innerHTML="QUANTITY";
-  const tdSubtotal=document.createElement('td');
+  const tdSubtotal=createEl('td');
   tdSubtotal.className="td-item";
   tdSubtotal.innerHTML="SUBTOTAL";
   tdSubtotal.colSpan=2;
@@ -175,9 +120,6 @@ function calculatePrice(quantity,price,value,addedItems){
   theadItems.appendChild(trHead);
   tableItems.appendChild(theadItems);
 
-  
- 
- 
   addedItems.forEach((ordered,index) => {
 
   const tbodyItems=createEl("tbody")
@@ -189,33 +131,53 @@ function calculatePrice(quantity,price,value,addedItems){
   tdProductPhoto.className="item-photo";
   const imgProduct=createEl("img");
   imgProduct.className="img-product";
-  imgProduct.src= ordered.image;
+  imgProduct.src= ordered.item.image;    
   tdProductPhoto.appendChild(imgProduct);
   const tdProductName=createEl("td");
   tdProductName.className="item-name";
   const nameOfItem=createEl("p");
-  nameOfItem.innerHTML=ordered.name;
+  nameOfItem.innerHTML=ordered.item.name;  
+  const spanName=createEl('span')
+  spanName.innerHTML="Name"
+  spanName.className="span-responsive"
   tdProductName.appendChild(nameOfItem);
+  tdProductName.appendChild(spanName)
   const tdProductPrice=createEl("td");
   tdProductPrice.className="item-price";
-  tdProductPrice.innerHTML= ordered.price;
+  tdProductPrice.innerHTML= ordered.item.price; 
+  const spanPrice=createEl('span')
+  spanPrice.innerHTML="Price"
+  spanPrice.className="span-responsive"
+  tdProductPrice.appendChild(spanPrice)
   const tdProductQuantity=createEl("td");
   tdProductQuantity.className="item-quantity";
   const inputQuantity=createEl("input");
   inputQuantity.style.width="50px";
   inputQuantity.type="number";
-  inputQuantity.value="1";
+  inputQuantity.value=ordered.quantity;   
   inputQuantity.addEventListener("click", function(){
-   calculatePrice(inputQuantity.value,ordered.price,serialNumber.textContent,addedItems);
+   calculatePrice(inputQuantity.value,ordered.item.price,serialNumber.textContent,addedItems);
+   let changeQuantity=JSON.parse(localStorage.getItem('ordered'+index))
+   changeQuantity.quantity=parseInt(inputQuantity.value)
+   localStorage.setItem('ordered'+index, JSON.stringify(changeQuantity))
   });
-  
-  
+
   inputQuantity.min="1";
   inputQuantity.className="input-quantity";
+  const spanQunatity=createEl('span')
+  spanQunatity.innerHTML="Qunatity"
+  spanQunatity.className="span-responsive"
   tdProductQuantity.appendChild(inputQuantity);
+  tdProductQuantity.appendChild(spanQunatity);
   const tdProductSubtotal=createEl("td");
   tdProductSubtotal.className="item-subtotal";
-  tdProductSubtotal.innerHTML=ordered.price;
+  tdProductSubtotal.innerHTML= ordered.item.price * parseInt  (ordered.quantity);  
+  const spanSubtotal=createEl('span')
+  spanSubtotal.innerHTML="Subtotal"
+  spanSubtotal.className="span-responsive"
+  tdProductSubtotal.appendChild(spanSubtotal)
+  tdProductQuantity.appendChild(inputQuantity);
+  tdProductQuantity.appendChild(spanQunatity);
   const tdProductRemove=createEl("td");
   tdProductRemove.className="remove-item";
   const iRemoveProduct=createEl("i");
@@ -238,24 +200,21 @@ function calculatePrice(quantity,price,value,addedItems){
   tableItems.appendChild(tbodyItems);
   mainContainerCart[0].appendChild(tableItems);
 
- 
-
 });
 }
 
-const optionsContainer=createEl("div");
-const cuponPriceContainer=createEl("div");
 
-//options BACK TO STORE AND CLEAR CART 
+
+//OPTIONS BACK TO STORE AND CLEAR CART 
+
 function optionsInCart(addedItems){
-//alert("radi");
 
 optionsContainer.className="options-container";
 const backToStoreContainer= createEl("div");
 backToStoreContainer.className="back-store-container";
-iBackToStore=document.createElement("i");
+const iBackToStore=createEl("i");
 iBackToStore.className="fa fa-solid fa-arrow-left";
-BackToStoreButtton=createEl("button");
+const BackToStoreButtton=createEl("button");
 BackToStoreButtton.className="back-to-store-button";
 BackToStoreButtton.innerHTML="Back to store";
 BackToStoreButtton.addEventListener("click", function(){
@@ -277,7 +236,7 @@ optionsContainer.appendChild(clearCartContainer);
 
 
 //CUPPON AND SUBTOTAL
-//const cuponPriceContainer=document.createElement("div");
+
 cuponPriceContainer.className="cupon-price-container";
 const cuponContainer=createEl("div");
 cuponContainer.className="cupon-container";
@@ -293,19 +252,18 @@ cuponContainer.appendChild(cuponHeading);
 cuponContainer.appendChild(inputForCupon);
 cuponContainer.appendChild(buttonForCuppon);
 cuponPriceContainer.appendChild(cuponContainer);
-
 const totalPriceContainer=createEl("div");
 totalPriceContainer.className="total-price-container";
 const subtotalContainer=createEl("div");
 subtotalContainer.className="subtotal-conainer";
-pSubtotal=createEl("p");
+const pSubtotal=createEl("p");
 pSubtotal.innerHTML="Subtotal";
-spanSubotal=createEl("span");
+const spanSubotal=createEl("span");
 spanSubotal.className="span-subtotal-all";
-totalPrice=0;
+let totalPrice=0;
 
 addedItems.forEach((ordered)=>{
-  totalPrice+=ordered.price});
+  totalPrice+=ordered.item.price*ordered.quantity});
 
 spanSubotal.innerHTML=totalPrice;
 subtotalContainer.appendChild(pSubtotal);
@@ -326,44 +284,34 @@ mainContainerCart[0].appendChild(cuponPriceContainer);
 
 }
 
-let i=0;
- function getItems(){
-  const addedItems=new Array;
-  
-  if(localStorage.length>0){
-    while(i<localStorage.length){
-      const ordered= JSON.parse(localStorage.getItem("item"+i));
-       i++;
-       if(ordered!=null){
-        addedItems.push(ordered);
-       }
-      
-  }
+function getItems(){
 
-  console.log(addedItems);
-  showItemInCart(addedItems);
-  optionsInCart(addedItems);
-  
-  }
- 
-  else{
+  const addedItems=[];
     
-    showMessage("Your cart is empty!");
-  }
-} 
+    if(localStorage.length>0){
+  
+     for(let i=0;i<localStorage.length;i++){
+  
+        const ordered= JSON.parse(localStorage.getItem("ordered"+i));
+        addedItems.push(ordered)
+     }
+     
+       showItemInCart(addedItems);
+       optionsInCart(addedItems);
+       
+     
+    }
+   
+    else{
 
-
+      showMessage("Your cart is empty!");
+    }
+  
+  
+    }
 
 
 
 
 getItems()
 
-
-
-
-
-
-
-
-  

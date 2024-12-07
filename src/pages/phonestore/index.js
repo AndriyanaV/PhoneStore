@@ -1,37 +1,7 @@
-async function getData() {
-  try {
-    const response = await fetch('http://localhost:5050/devices');
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Error fetching data:', error);
-    return null;
-  }
-}
+import { createEl, getData,addItemToCart,seeItem,createNavBar,createFooter,checkItem,reorganizeLocalStorage} from '../../utils/utils.js';
 
-function createEl(type){
-  let element=document.createElement(type);
-  return element;
-}
-
-function seeItem(id){
-  let key = 'id';
-  let value = id;
-
-  let url = new URL(location.origin + '/pages/singledevice/');
-  url.searchParams.append(key, value);
- // console.log({route: location})
-  window.location=url;
-
-}
-
-function addItemToCart(item){
-  const addedItem =JSON.stringify(item);
-  localStorage.setItem("item"+localStorage.length, addedItem );
-  
-
-}
-
+createNavBar();
+createFooter();
 
 async function Main(){
   
@@ -40,7 +10,7 @@ async function Main(){
 
   
 
-  let items=document.createElement("div");
+  let items=createEl("div");
   items.className="items-container";
   let mainContainer=document.getElementById("main-container");
   mainContainer.className="main-container";
@@ -50,7 +20,7 @@ async function Main(){
    
  
     const item = index;
-    //console.log(item);
+    
 
     const divForOneItem=createEl('div');
     divForOneItem.className="one-item";
@@ -68,6 +38,12 @@ async function Main(){
     const pName=createEl('p');
     pName.innerHTML=item.name;
     divForName.appendChild(pName);
+
+    const divForPrice=createEl('div');
+    divForPrice.className="priceOfItem";
+    const pPrice=createEl('p');
+    pPrice.innerHTML=item.price + "$";
+    divForPrice.appendChild(pPrice);
 
     const divForOptions=createEl('div');
     divForOptions.className="options";
@@ -99,6 +75,7 @@ async function Main(){
     divForOptions.appendChild(AddItem);
     divForOneItem.appendChild(divForPhoto);
     divForOneItem.appendChild(divForName);
+    divForOneItem.appendChild(divForPrice)
     divForOneItem.appendChild(divForOptions);
     items.appendChild(divForOneItem);
     mainContainer.appendChild(items)
