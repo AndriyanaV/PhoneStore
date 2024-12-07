@@ -12,6 +12,7 @@ createFooter();
 
 
 let numbers=new Array();
+
 numbers=[
     {
         number:100,
@@ -37,20 +38,21 @@ numbers=[
 ]
 
 function counterUp(element, maxValue,attribute) {
+
     let count = 0;
   
     const interval = setInterval(() => {
         if (count <= maxValue) {
             element.innerHTML = count+attribute;
             count++;
-        } else {
-            clearInterval(interval);
-        }
+        } 
     }, 50);
+
   }
 
 
 function startCouner(){
+
     const all=document.getElementsByClassName("counter-heading");
 
     for(let i=0;i<all.length;i++){
@@ -63,6 +65,7 @@ function startCouner(){
 let counterStarted = false;
 
 function isInViewport(element) {
+  
     var rect = element.getBoundingClientRect();
     var html = document.documentElement;
     return (
@@ -74,6 +77,7 @@ function isInViewport(element) {
   }
 
 const counterContainer=document.getElementsByClassName("counters")[0];
+
 window.addEventListener("scroll", ()=>{
    
     if(isInViewport(counterContainer)  &&   !counterStarted){
@@ -206,6 +210,7 @@ function moveToSliderMobile(direction){
   }
 
   else{
+
     if(endAtPhone<0){
       endAtPhone=8
     }
@@ -222,6 +227,7 @@ function moveToSliderMobile(direction){
 }
 
 function setUpMobile(index){
+
   let sliderImage = document.querySelectorAll(".person-image-mobile");
   let sliderLinkedin = document.querySelectorAll(".linkedin-profile-mobile");
   let sliderName = document.querySelectorAll(".name-mobile");
@@ -254,6 +260,7 @@ function setMembers(persons){
 
         sliderImage[i].src=persons[i].img
         sliderName[i].innerHTML=persons[i].name
+        sliderLinkedin [i].innerHTML=persons[i].linkedin
         sliderPosition[i].innerHTML=persons[i].position
 
     }

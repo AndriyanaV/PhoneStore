@@ -1,4 +1,4 @@
-import { createEl,createNavBar,createFooter} from '../../utils/utils.js';
+import { createEl,createNavBar,createFooter, addItemToCart,checkItem,reorganizeLocalStorage} from '../../utils/utils.js';
 
 createNavBar();
 createFooter();
@@ -52,10 +52,6 @@ async function showItem(){
 
   
  deviceSpecification.appendChild(divForName);
- 
-
-
-  
 
   let arr=[
     {
@@ -101,9 +97,6 @@ async function showItem(){
 ];
 
 
-
-
-
 arr.forEach (function(index) {
   const section=createEl('section');
   section.className="section-for-device";
@@ -125,8 +118,21 @@ arr.forEach (function(index) {
 
 });
 
-containerSingleDevice.appendChild(deviceSpecification);
 
+const AddItem=createEl('button');
+AddItem.className="add-card";
+AddItem.addEventListener("click", function(){
+      addItemToCart(selectedDevice);
+    });
+const iAdd=createEl('i');
+iAdd.className="fas fa-shopping-cart";
+const spanAdd=createEl('span');
+spanAdd.innerHTML="Add";
+AddItem.appendChild(iAdd)
+AddItem.appendChild(spanAdd)
+deviceSpecification.appendChild(AddItem)
+
+containerSingleDevice.appendChild(deviceSpecification);
 
 };
 

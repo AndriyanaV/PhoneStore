@@ -14,18 +14,10 @@ export async function getData() {
   }
 }
 
-/*export function addItemToCart(item){
-  let ordered={
-     quantity:1,
-     item:item
-   }
-   const addedItem =JSON.stringify(ordered);
-   localStorage.setItem("ordered"+localStorage.length, addedItem );
-   
- 
- }*/
 
 export  function reorganizeLocalStorage(itemsToAdd){
+
+  localStorage.clear()
  
   itemsToAdd.forEach((el,index)=>{
     localStorage.setItem("ordered"+index, JSON.stringify(el));

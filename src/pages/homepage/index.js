@@ -65,6 +65,12 @@ async function Main(){
     pName.innerHTML=item.name;
     divForName.appendChild(pName);
 
+    const divForPrice=createEl('div');
+    divForPrice.className="priceOfItem";
+    const pPrice=createEl('p');
+    pPrice.innerHTML=item.price + "$";
+    divForPrice.appendChild(pPrice);
+
     const divForOptions=createEl('div');
     divForOptions.className="options";
     const SeeItem=createEl('button');
@@ -95,6 +101,7 @@ async function Main(){
     divForOptions.appendChild(AddItem);
     divForOneItem.appendChild(divForPhoto);
     divForOneItem.appendChild(divForName);
+    divForOneItem.appendChild(divForPrice);
     divForOneItem.appendChild(divForOptions);
     items.appendChild(divForOneItem);
     main.appendChild(items)

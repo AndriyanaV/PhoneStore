@@ -2,6 +2,7 @@ const passwordField = document.getElementById("password");
 const emailField = document.getElementById("email");
 
 function validation(event) {
+  
   event.preventDefault();
   const email = document.getElementById("email").value;
   const passwordError = document.getElementById("passwordError");
@@ -17,6 +18,7 @@ function validation(event) {
   errorOutline[1].style.borderColor = "black";
 
   function oneUpperCase(password) {
+
     const regexUpperCase = /[A-Z]/;
     return regexUpperCase.test(password);
   }
@@ -27,6 +29,7 @@ function validation(event) {
   }
 
   function errorInMail(txt) {
+
     mailError.style.visibility = "visible";
     mailError.style.display="block"
     mailError.innerText = txt;
@@ -34,6 +37,7 @@ function validation(event) {
   }
 
   function errorInPassword(txt) {
+
     passwordError.style.visibility = "visible";
     passwordError.style.display="block"
     passwordError.innerText = txt;

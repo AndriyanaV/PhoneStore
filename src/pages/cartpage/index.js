@@ -1,11 +1,13 @@
-import { createEl, createNavBar,createFooter} from '../../utils/utils.js';
+import { createEl, createNavBar,createFooter,reorganizeLocalStorage} from '../../utils/utils.js';
 
 createNavBar();
 createFooter();
 
 
 const mainContainerCart=document.getElementsByClassName("page-content");
-const tableItems=document.createElement('table');
+const tableItems=createEl('table');
+const optionsContainer=createEl("div");
+const cuponPriceContainer=createEl("div");
 
 function clearCartFunction(){
   localStorage.clear();
@@ -28,17 +30,6 @@ function backToStoreF(){
 }
 
 
-
-
-function redefineLocalStorage(reorganized){
-      localStorage.clear();
-      
-      reorganized.forEach((reorganizedItems,index)=>{
-            localStorage.setItem("ordered"+index, JSON.stringify(reorganizedItems));
-      })
-}
-
-
 function deleteOneProduct(ordered,addedItems,index){
   
   let reorganized = new Array();
@@ -51,7 +42,8 @@ function deleteOneProduct(ordered,addedItems,index){
        }
    
     
-    redefineLocalStorage(reorganized);
+   
+    reorganizeLocalStorage(reorganized)
   
 
   
@@ -63,11 +55,15 @@ function deleteOneProduct(ordered,addedItems,index){
     cuponPriceContainer.replaceChildren();
     optionsInCart(reorganized)
   }
+
   else{
     tableItems.replaceChildren();
+    tableItems.style.display="none"
     optionsContainer.replaceChildren();
+    optionsContainer.style.display="none";
     cuponPriceContainer.replaceChildren();
-    showMessage("Your cart is empty")
+    cuponPriceContainer.style.display="none"
+    showMessage("Your cart is empty!")
   }
 
 }
@@ -81,7 +77,6 @@ function subtotalAllCalculate(addedItems){
     sumAll+=piceForOne;
 
   }
-
     document.getElementsByClassName("span-subtotal-all")[0].innerHTML=sumAll;
 }
 
@@ -100,8 +95,6 @@ function calculatePrice(quantity,price,value,addedItems){
 
  function showItemInCart(addedItems){
   
- 
- 
   tableItems.className="table-item";
   const theadItems=createEl('thead');
   const trHead=createEl('tr');
@@ -127,9 +120,6 @@ function calculatePrice(quantity,price,value,addedItems){
   theadItems.appendChild(trHead);
   tableItems.appendChild(theadItems);
 
-  
- 
- 
   addedItems.forEach((ordered,index) => {
 
   const tbodyItems=createEl("tbody")
@@ -171,8 +161,7 @@ function calculatePrice(quantity,price,value,addedItems){
    changeQuantity.quantity=parseInt(inputQuantity.value)
    localStorage.setItem('ordered'+index, JSON.stringify(changeQuantity))
   });
-  
-  
+
   inputQuantity.min="1";
   inputQuantity.className="input-quantity";
   const spanQunatity=createEl('span')
@@ -211,22 +200,19 @@ function calculatePrice(quantity,price,value,addedItems){
   tableItems.appendChild(tbodyItems);
   mainContainerCart[0].appendChild(tableItems);
 
- 
-
 });
 }
 
-const optionsContainer=createEl("div");
-const cuponPriceContainer=createEl("div");
+
 
 //OPTIONS BACK TO STORE AND CLEAR CART 
-function optionsInCart(addedItems){
 
+function optionsInCart(addedItems){
 
 optionsContainer.className="options-container";
 const backToStoreContainer= createEl("div");
 backToStoreContainer.className="back-store-container";
-const iBackToStore=document.createElement("i");
+const iBackToStore=createEl("i");
 iBackToStore.className="fa fa-solid fa-arrow-left";
 const BackToStoreButtton=createEl("button");
 BackToStoreButtton.className="back-to-store-button";
@@ -266,7 +252,6 @@ cuponContainer.appendChild(cuponHeading);
 cuponContainer.appendChild(inputForCupon);
 cuponContainer.appendChild(buttonForCuppon);
 cuponPriceContainer.appendChild(cuponContainer);
-
 const totalPriceContainer=createEl("div");
 totalPriceContainer.className="total-price-container";
 const subtotalContainer=createEl("div");
@@ -299,53 +284,9 @@ mainContainerCart[0].appendChild(cuponPriceContainer);
 
 }
 
-
-
-/*function getItems(){
+function getItems(){
 
   const addedItems=[];
-  
-  
-  if(localStorage.length>0){
-
-   for(let i=0;i<localStorage.length;i++){
-
-      const ordered= JSON.parse(localStorage.getItem("ordered"+i));
-
-      let ids= addedItems.map(el => {
-         return el.item.id;
-    })
-     
-
-      if(ids.includes(ordered.item.id)){
-        let el=addedItems.find((element) => element.item.id == ordered.item.id);
-        el.quantity+=1;
-      }
-
-      else{
-        addedItems.push(ordered)
-      }
-    }
-
-
-   console.log(addedItems);
-   showItemInCart(addedItems);
-   optionsInCart(addedItems);
-   redefineLocalStorage(addedItems)
-  
-  }
- 
-  else{
-    
-    showMessage("Your cart is empty!");
-  }
-
-
-  }*/
-  function getItems(){
-
-    const addedItems=[];
-    
     
     if(localStorage.length>0){
   
@@ -362,6 +303,7 @@ mainContainerCart[0].appendChild(cuponPriceContainer);
     }
    
     else{
+
       showMessage("Your cart is empty!");
     }
   
@@ -373,4 +315,3 @@ mainContainerCart[0].appendChild(cuponPriceContainer);
 
 getItems()
 
-//localStorage.clear()

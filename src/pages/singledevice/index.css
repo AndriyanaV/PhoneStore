@@ -28,7 +28,7 @@ body {
   justify-content: center;
   gap: 20px;
   margin-top: 40px;
-  min-height: 600px;
+  min-height: 80vh;
   padding-top: 100px;
 }
 
@@ -94,9 +94,16 @@ body {
   align-items: center;
   justify-content: center;
   padding-top: 11px;
-  min-height: 25px;
+  min-height: 35px;
   margin-bottom: 7px;
   padding-bottom: 11px;
+}
+
+.add-card {
+  margin-top: 20px;
+  min-height: 40px;
+  min-width: 100%;
+  gap: 12px;
 }
 
 @media (max-width: 480px) {
@@ -110,7 +117,7 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
-    padding-top: 10px;
+    padding-top: 60px;
     margin-top: 0px;
   }
 
@@ -127,6 +134,7 @@ body {
   .device-name-container {
     width: 90%;
     font-size: 12px;
+    min-height: 50px;
   }
 
   .device-specifications {
@@ -147,8 +155,13 @@ body {
     align-items: center;
   }
 
+  .add-card {
+    min-width: 90%;
+    margin-top: 30px;
+  }
+
   .footer {
     position: absolute;
-    bottom: -220%;
+    bottom: -250%;
   }
 }
