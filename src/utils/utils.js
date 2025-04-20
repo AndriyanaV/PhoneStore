@@ -91,12 +91,14 @@ export function createNavBar(){
   const phoneStoreDiv = document.createElement('div');
   phoneStoreDiv.classList.add('phone-store');
   
-  const phoneStoreSpan = document.createElement('span');
+  
+  const phoneStoreImg = document.createElement('img');
+  phoneStoreImg.className="phone-store-img"
   const phoneStoreLink = document.createElement('a');
-  phoneStoreLink.href = '/pages/phonestore';
-  phoneStoreLink.textContent = 'Phone store';
-  phoneStoreSpan.appendChild(phoneStoreLink);
-  phoneStoreDiv.appendChild(phoneStoreSpan);
+  phoneStoreLink.href = '/pages/homepage';
+  phoneStoreImg.src='/public/photos/logo-at-navbar.png';
+  phoneStoreLink.appendChild(phoneStoreImg)
+  phoneStoreDiv.appendChild(phoneStoreLink);
 
   const navMenu = document.createElement('nav');
   navMenu.classList.add('nav-menu');
@@ -104,6 +106,10 @@ export function createNavBar(){
   const homeLink = document.createElement('a');
   homeLink.href = '/pages/homepage';
   homeLink.textContent = 'Home';
+
+  const storeLink = document.createElement('a');
+  storeLink.href = '/pages/phonestore';
+  storeLink.textContent = 'Store';
 
   const aboutUsLink = document.createElement('a');
   aboutUsLink.href = '/pages/aboutus';
@@ -120,6 +126,7 @@ export function createNavBar(){
 
   
   navMenu.appendChild(homeLink);
+  navMenu.appendChild(storeLink);
   navMenu.appendChild(aboutUsLink);
   navMenu.appendChild(cartLink);
   navMenu.appendChild(logOutLink);
@@ -146,7 +153,7 @@ export function createFooter(){
   logoFooterContainer.classList.add('logo-footer-container');
 
   const logoLink = document.createElement('a');
-  logoLink.href = '/pages/phonestore';
+  logoLink.href = '/pages/homepage';
 
   const logoImage = document.createElement('img');
   logoImage.src = '/public/photos/logo.png';
@@ -158,9 +165,9 @@ export function createFooter(){
   const messageOnFooter = document.createElement('div');
   messageOnFooter.classList.add('message-on-footer');
 
-  const footerMessage = document.createElement('p');
-  footerMessage.textContent = 'We believe in building connections, not just selling devices.';
-  messageOnFooter.appendChild(footerMessage);
+  // const footerMessage = document.createElement('p');
+  // footerMessage.textContent = 'We believe in building connections, not just selling devices.';
+  // messageOnFooter.appendChild(footerMessage);
 
   logoMessageContainer.appendChild(logoFooterContainer);
   logoMessageContainer.appendChild(messageOnFooter);
