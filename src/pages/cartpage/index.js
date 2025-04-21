@@ -1,7 +1,11 @@
-import { createEl, createNavBar,createFooter,reorganizeLocalStorage} from '../../utils/utils.js';
+import { createEl, createNavBar,createFooter,reorganizeLocalStorage,pageSign} from '../../utils/utils.js';
 
 createNavBar();
 createFooter();
+
+window.onload = () => {
+  pageSign();
+}
 
 
 const mainContainerCart=document.getElementsByClassName("page-content");

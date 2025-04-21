@@ -1,8 +1,12 @@
 
-import { createEl, getData,seeItem,createNavBar,createFooter,addItemToCart,checkItem,reorganizeLocalStorage} from '../../utils/utils.js';
+import { createEl, getData,seeItem,createNavBar,createFooter,addItemToCart,checkItem,reorganizeLocalStorage, pageSign} from '../../utils/utils.js';
 
 createNavBar();
 createFooter();
+
+window.onload = () => {
+  pageSign();
+};
 
 //localStorage.clear()
 
@@ -42,6 +46,11 @@ async function Main(){
   let main=document.getElementById("main");
   main.className="main-conatiner";
   items.innerHTML=' ';
+
+  const mainHeading=document.createElement('h2');
+  mainHeading.innerHTML='Customer Favorites: Top-Rated Phones of 2025';
+  mainHeading.className='best-selling-phone-heading';
+  main.appendChild(mainHeading);
 
  selectedItems.forEach( function(index) {
 

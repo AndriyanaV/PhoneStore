@@ -1,4 +1,4 @@
-import { createNavBar, createFooter, createEl} from '../../utils/utils.js';
+import { createNavBar, createFooter, createEl,pageSign} from '../../utils/utils.js';
 
 const imgRight= document.getElementsByClassName("move-slider-img")[1].addEventListener("click", () => {moveToSlider('right')})
 const imgLeft= document.getElementsByClassName("move-slider-img")[0].addEventListener("click", () => {moveToSlider('left')})
@@ -9,7 +9,9 @@ const imgLefttM=document.getElementsByClassName("move-slider-img-m")[0].addEvent
 createNavBar();
 createFooter();
 
-
+window.onload = () => {
+  pageSign();
+}
 
 let numbers=new Array();
 
@@ -143,6 +145,7 @@ const teamMembers = [
       linkedin: "https://www.linkedin.com/in/danielanderson"
     }
   ];
+
 
   
 

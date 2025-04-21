@@ -1,7 +1,11 @@
-import { createEl, getData,addItemToCart,seeItem,createNavBar,createFooter,checkItem,reorganizeLocalStorage} from '../../utils/utils.js';
+import { createEl, getData,addItemToCart,seeItem,createNavBar,createFooter,checkItem,reorganizeLocalStorage,pageSign} from '../../utils/utils.js';
 
 createNavBar();
 createFooter();
+
+window.onload = () => {
+  pageSign();
+};
 
 async function Main(){
   
