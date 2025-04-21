@@ -19,35 +19,26 @@
   <body>
 
     <div class="nav-container"> </div>
-  
-   
-
     <main>
-      <div class="about-us-header-section-container"></div>
-
-      <div class="our-story-container">
-        <div class="story-text-container">
-          <h1>Our Story</h1>
-          <p class="text-our-story">
-            Founded with a passion for technology and a commitment to
-            exceptional service, our phone store began as a small venture aimed
-            at connecting our community with the latest mobile innovations. Over
-            the years, we’ve grown into a trusted destination for all things
-            tech, offering a wide range of devices and accessories. Our
-            knowledgeable team is dedicated to helping customers find the
-            perfect solutions for their needs.
-          </p>
-        </div>
-        <div class="photo-story-container">
-          <div class="first-blue"><div class="first-blue-square"></div></div>
-          <div class="photo-of-story"><img src="/public/photos/tm.jpg" /></div>
-          <div class="second-blue"><div class="second-blue-square"></div></div>
+      
+      <div class="hero-section">
+        <div class="container">
+          <div class="about-us-container">
+            <div class="about-us-desc-hero">
+              <div class="about-us-heading-desc-container">
+                <h1 class="hero-heding">About Us</h1>
+                <p>Trust us to keep you connected</p>
+              </div>
+              <a href="#main"><div class="button-container learn-more-button-container"><button class="learn-more-button">Learn more</button></div></a>
+            </div>
+            <div class="about-us-hero-img-container"><img src="../../public/photos/about-us-photo.png"/></div>
+          </div>
         </div>
       </div>
 
-      
 
       <section class="counters">
+        <div class="container">
         <div class="counter-container">
           <div class="counter-item">
             <div class="first-square-counter-container">
@@ -103,9 +94,39 @@
           
           </div>
         </div>
+      </div>
       </section>
 
-      <section class="cards-about-company">
+    <section class="page-section our-story-section" id="main"> 
+      <div class="container">
+      <div class="our-story-container">
+        <div class="story-text-container">
+          <h1>Our Story</h1>
+          <p class="text-our-story">
+            Founded with a passion for technology and a commitment to
+            exceptional service, our phone store began as a small venture aimed
+            at connecting our community with the latest mobile innovations. Over
+            the years, we’ve grown into a trusted destination for all things
+            tech, offering a wide range of devices and accessories. Our
+            knowledgeable team is dedicated to helping customers find the
+            perfect solutions for their needs.
+          </p>
+        </div>
+        <div class="photo-story-container">
+          <div class="first-blue"><div class="first-blue-square"></div></div>
+          <div class="photo-of-story"><img src="/public/photos/tm.jpg" /></div>
+          <div class="second-blue"><div class="second-blue-square"></div></div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+      
+
+    
+
+      <section class="cards-about-company page-section">
+        <div class="container">
         <div class="cards-company-container">
           <div class="features-container" id="mission">
             <div class="feature-image-container"><img src="/public/photos/achievement.png"/></div>
@@ -120,12 +141,14 @@
           <div class="features-container" id="goals">
             <div class="feature-image-container"><img src="/public/photos/goals.png"/></div>
             <h2>Our Goals</h2>
-            <p class="card-fetature-desc"> To increase market share, expand customer base, enhance user experience, and drive revenue growth through targeted marketing strategies, improved product offerings, and optimized sales channels. Our goal for mobile sales is to provide an exceptional experience that keeps our customers happy.</p>
+            <p class="card-fetature-desc"> Our goal is to grow market share, expand the customer base, enhance user experience, and boost revenue through targeted marketing, improved products, and optimized sales channels. For mobile sales, we aim to deliver an exceptional experience that keeps customers satisfied.</p>
           </div>
         </div>
+      </div>
       </section>
 
-      <section class="slider-mobile">
+      <section class="slider-mobile page-section">
+      <div class="container">
       <div class="slider-container">
         <div class="arrow-to-left"><img src="/public/photos/arrow_right.png" class="move-slider-img-m" /></div>
         <div class="slider-item">
@@ -140,11 +163,14 @@
         </div>
         <div class="arrow-to-right"  ><img src="/public/photos/arrow_left.png" class="move-slider-img-m"/></div>
       </div>
+    </div>
     </section>
 
-      <section class="slider">
+      <section class="slider page-section">
+        <div class="container">
         <div class="slider-container">
           <div class="arrow-to-left"><img src="/public/photos/arrow_right.png"  class="move-slider-img" /></div>
+          <div class="slider-items-container">
           <div class="slider-item">
             <div class="image-in-slider"><img src="/public/photos/people/ana_lazic.png" class="person-image"/></div>
             <div class="info-in-slider">
@@ -175,11 +201,14 @@
               </div>
             </div>
           </div>
-          <div class="arrow-to-right"  ><img src="/public/photos/arrow_left.png" class="move-slider-img"></div>
         </div>
+          <div class="arrow-to-right"  ><img src="/public/photos/arrow_left.png" class="move-slider-img" id="rightArrow"></div>
+        </div>
+      </div>
       </section>
 
-      <section class="contact">
+      <section class="contact page-section">
+        <div class="container">
         <div class="contact-container">
           <div class="card-contact">
             <div class="square-contact-container-top"><div class="square-contatct"></div></div>
@@ -210,6 +239,7 @@
           
           
         </div>
+      </div>
       </section>
       <div class="footer"></div>
     </main>

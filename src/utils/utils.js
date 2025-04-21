@@ -3,6 +3,18 @@ export function createEl(type){
   return element;
 }
 
+export function pageSign(){
+  let el = document.querySelectorAll('.nav-menu a');
+  
+  for (let i = 0; i < el.length; i++) {
+    el[i].removeAttribute('target');
+
+      if (el[i].href=== window.location.href) {
+      el[i].classList.add('visited-page');
+      }
+}
+}
+
 export async function getData() {
   try {
     const response = await fetch('http://localhost:5050/devices');
@@ -104,24 +116,24 @@ export function createNavBar(){
   navMenu.classList.add('nav-menu');
 
   const homeLink = document.createElement('a');
-  homeLink.href = '/pages/homepage';
+  homeLink.href = '/pages/homepage/';
   homeLink.textContent = 'Home';
 
   const storeLink = document.createElement('a');
-  storeLink.href = '/pages/phonestore';
+  storeLink.href = '/pages/phonestore/';
   storeLink.textContent = 'Store';
 
   const aboutUsLink = document.createElement('a');
-  aboutUsLink.href = '/pages/aboutus';
+  aboutUsLink.href = '/pages/aboutus/';
   aboutUsLink.textContent = 'About us';
 
   const cartLink = document.createElement('a');
-  cartLink.href = '/pages/cartpage';
+  cartLink.href = '/pages/cartpage/';
   cartLink.id = 'card';
   cartLink.textContent = 'Cart';
 
   const logOutLink = document.createElement('a');
-  logOutLink.href = '/pages/login';
+  logOutLink.href = '/pages/login/';
   logOutLink.textContent = 'Log out';
 
   
