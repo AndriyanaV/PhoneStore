@@ -3,46 +3,46 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  background-image: linear-gradient(
-    to bottom,
-    #2980b9,
-    rgba(255, 255, 255, 0.5)
-  );
+  background-image: linear-gradient(to bottom, #7ab8e1, rgba(255, 255, 255, 0.5));
   height: 100vh;
   font-family: "Gilroy";
 }
 
 #form-login {
-  border: 1px solid #ccc;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  height: 450px;
+  /* border: 1px solid #ccc; */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  min-height: 450px;
   width: 500px;
-  max-height: 600px;
+  /* max-height: 600px; */
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 23px;
   border-radius: 15px;
   background-color: white;
-  justify-content: flex-start;
+  justify-content: center;
+  padding: 20px 5px;
 }
 
 #logInForm {
-  height: 100%;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   gap: 30px;
-  padding-bottom: 0px;
   width: 100%;
 }
 
 #initial-div {
-  height: 100px;
+  /* height: 100px; */
   width: 100%;
   text-align: center;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
+}
+
+.input-error-container{
+  min-height: 50px;
 }
 
 .input-conteiner {
@@ -68,7 +68,7 @@ body {
   width: 100%;
   height: 100%;
   padding-right: 67px;
-  background-color: #b8b4b473;
+  background-color: #f3f2f2;
 }
 
 #eye-button {
@@ -81,13 +81,38 @@ body {
 #submit {
   cursor: pointer;
   width: 100%;
-  background-color: #1d5f8b;
+  background-color: #499cd4;
   color: white;
   font-weight: bold;
   height: 100%;
   border: none;
   font-size: 24px;
   border-radius: 4px;
+}
+
+#submit:hover{
+  background-color: #59afe9;
+}
+
+#submit span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+#submit:hover span {
+  animation: bounce 0.6s ease infinite alternate;
+}
+
+/* #submit:hover span:nth-child(1) { animation-delay: 0s; }
+#submit:hover span:nth-child(2) { animation-delay: 0.05s; }
+#submit:hover span:nth-child(3) { animation-delay: 0.1s; }
+#submit:hover span:nth-child(4) { animation-delay: 0.15s; }
+#submit:hover span:nth-child(5) { animation-delay: 0.2s; } */
+
+
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
 }
 
 #div-submit {
@@ -123,7 +148,7 @@ input {
 #email {
   width: 100%;
   box-sizing: border-box;
-  background-color: #b8b4b475;
+  background-color: #f3f2f2;
 }
 
 .input-error {
@@ -136,7 +161,7 @@ input {
   max-width: 334px;
   font-size: 14px;
   font-weight: bold;
-  position: absolute;
+  /* position: absolute; */
   min-width: 98%;
   padding-top: 3px;
   padding-bottom: 3px;
@@ -144,12 +169,24 @@ input {
 
 @media (max-width: 480px) {
   #form-login {
-    width: 430px;
+    width: 90%;
     height: 430px;
+    padding: 20px 10px;
+    justify-content: center;
+  }
+
+  #h1-login{
+    font-size: 32px;
+  }
+
+  #initial-div{
+    height: auto;
   }
 
   #logInForm {
     gap: 5px;
+    justify-content: center;
+    height: fit-content;
   }
 
   #p {
@@ -162,11 +199,11 @@ input {
 
   .input-conteiner {
     height: 90px;
-    padding-top: 5px;
+    /* padding-top: 5px; */
   }
 
   label {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   form {
@@ -180,14 +217,24 @@ input {
   .input-conteiner {
     gap: 7px;
     margin-top: 0px;
+    height: auto;
+    min-height: 90px;
   }
 
   .input-error {
     width: 100%;
-    font-size: 15px;
+    font-size: 14px;
+    min-height: fit-content;
+    position: unset;
   }
 
   #div-submit {
-    padding-top: 23px;
+    margin-top: 10px;
+    min-height: unset;
+  }
+
+  #submit {
+    height: 50px;
+    
   }
 }

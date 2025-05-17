@@ -3,9 +3,26 @@ import { createEl, getData,addItemToCart,seeItem,createNavBar,createFooter,check
 createNavBar();
 createFooter();
 
+const items=createEl("div");
+items.className="items-container";
+
 window.onload = () => {
   pageSign();
 };
+
+const seeMoreLess=document.getElementById("see-more-less");
+
+seeMoreLess.addEventListener('click', ()=>{
+  if(items.style.height=='auto'){
+    items.style.height='1200px';
+    seeMoreLess.innerHTML="See More";
+    return
+  }
+
+  items.style.height='auto';
+  seeMoreLess.innerHTML="See Less";
+  
+})
 
 async function Main(){
   
@@ -14,8 +31,8 @@ async function Main(){
 
   
 
-  let items=createEl("div");
-  items.className="items-container";
+  // let items=createEl("div");
+  // items.className="items-container";
   let mainContainer=document.getElementById("main-container");
   mainContainer.className="main-container";
   items.innerHTML=' ';
