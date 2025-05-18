@@ -147,8 +147,68 @@ export function createNavBar(){
   navContainer.appendChild(phoneStoreDiv);
   navContainer.appendChild(navMenu);
 
+//Mobile navbar 
+const mobileMenuContainer=document.createElement('div');
+mobileMenuContainer.className="mobile-menu-container"
 
+
+const hamburgerMenuContainer= document.createElement('div');
+hamburgerMenuContainer.className="hamburger-menu-container";
+const hamburgerImg= document.createElement('img');
+hamburgerImg.src="/public/photos/hamburger-menu-img.png";
+hamburgerMenuContainer.appendChild(hamburgerImg);
+
+// hamburgerMenuContainer.addEventListener('click', () => {
+//   if(mobileLinksMenuContainer.style.display=='none'){
+//       mobileLinksMenuContainer.style.display='flex';
+//       return;
+//   }
+  
+//    mobileLinksMenuContainer.style.display='none';
+
+// });
+
+hamburgerMenuContainer.addEventListener('click', () => {
+  mobileLinksMenuContainer.classList.toggle('active');
+});
+
+
+const mobileLinksMenuContainer= document.createElement('div');
+mobileLinksMenuContainer.className='mobile-links-container';
+
+const homeLinkMobile = document.createElement('a');
+homeLinkMobile.href = '/pages/homepage/';
+homeLinkMobile.textContent = 'Home';
+
+const storeLinkMobile = document.createElement('a');
+storeLinkMobile.href = '/pages/phonestore/';
+storeLinkMobile.textContent = 'Store';
+
+const aboutUsLinkMobile = document.createElement('a');
+aboutUsLinkMobile.href = '/pages/aboutus/';
+aboutUsLinkMobile.textContent = 'About us';
+
+const cartLinkMobile = document.createElement('a');
+cartLinkMobile.href = '/pages/cartpage/';
+cartLinkMobile.id = 'card';
+cartLinkMobile.textContent = 'Cart';
+
+const logOutLinkMobile = document.createElement('a');
+logOutLinkMobile.href = '/pages/login/';
+logOutLinkMobile.textContent = 'Log out';
+
+mobileLinksMenuContainer.appendChild(homeLinkMobile);
+mobileLinksMenuContainer.appendChild(storeLinkMobile);
+mobileLinksMenuContainer.appendChild(aboutUsLinkMobile);
+mobileLinksMenuContainer.appendChild(cartLinkMobile);
+mobileLinksMenuContainer.appendChild(logOutLinkMobile);
+
+mobileMenuContainer.appendChild(hamburgerMenuContainer)
+navContainer.appendChild(mobileLinksMenuContainer)
+navContainer.appendChild(mobileMenuContainer);
 }
+
+
 
 
 export function createFooter(){

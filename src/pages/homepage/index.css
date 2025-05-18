@@ -163,11 +163,12 @@
   gap: 40px;
   align-items: flex-start;
   justify-content: center;
+  padding: 0px 60px;
  
 }
 
 .homepage .items-container .one-item {
-  width: 30%;
+  width: 33%;
   gap:10px;
 }
 
@@ -192,18 +193,81 @@
   cursor: pointer;
 }
 
-@media (max-width: 480px) {
-  .main-conatiner {
-    min-height: 1500px;
-    justify-content: space-between;
-    padding-bottom: 19px;
-    margin-top: 20px;
-    gap: 60px;
+@media (max-width: 460px) {
+
+.container{
+    width: 100%;
+    
   }
 
-  .see-all {
-    margin-top: 0px;
-    width: 170px;
-    border-radius: 4px;
-  }
+.hero-container {
+    flex-direction: column;
+    gap: 60px;
+    padding-bottom: 0px;
+}
+
+.hero-heading {
+  font-size: 32px;
+}
+
+.hero-headings-container {
+  gap:14px;
+  padding-top: 0px;
+}
+
+.hero-desc-container {
+  width: 100%;
+  padding-top: 30px;
+}
+
+.heading-two {
+  padding-left: 10px;
+}
+
+.heading-three {
+  padding-left: 40px;
+}
+
+.smart-img-container, .easy-img-container, .simple-img-container {
+  display: none;
+}
+
+.hero-img-container {
+  width: 100%;
+  height: auto;
+}
+
+.hero-img-container img {
+  transform: unset;
+}
+
+.top-devices-section{
+  padding: 60px 0px !important;
+}
+
+.main-conatiner {
+  padding: 0px 20px;
+}
+
+.best-selling-phone-heading {
+  font-size: 32px;
+}
+
+.items-container {
+  flex-direction: column;
+  padding: 0px;
+  align-items: center;
+  gap:50px;
+}
+
+.homepage .items-container .one-item {
+  width: 97%;
+  padding: 20px 0px;
+  min-height: unset;
+  max-height: unset;
+  height: auto;
+}
+
+
+
 }
