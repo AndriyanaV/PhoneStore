@@ -6,10 +6,19 @@
 npm run dev
 ```
 
-## Application dev url
+### Mini Project: Phone Store
 
-- http://127.0.0.1:8080/
+This is a smaller project where I aimed to simulate a simple phone store interface with basic backend interaction. The idea was to practice working with localhost and understand how frontend communicates with backend to create dynamic content.
 
-## Server url
+What I learned:
 
-- http://localhost:5050/devices
+- How to work with localhost environment
+
+- Using the Fetch API in JavaScript to send and receive data from the backend
+
+- Dynamically creating product cards (order items) on the frontend based on data received
+
+- Manipulating the DOM with JavaScript to create and insert HTML elements programmatically
+
+
+
